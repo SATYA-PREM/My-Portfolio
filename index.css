@@ -1,0 +1,21 @@
+*{background-color: rgb(178, 219, 255);
+}
+.header-section{
+    display: flex;
+    gap: 100px;
+
+    justify-content: right;
+    width: 100%;
+}
+.info{
+    display: flex;
+    flex-direction: row
+}
+.contact{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    width: 100%;
+   align-items: center;
+   justify-content: center;
+}
