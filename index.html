@@ -37,9 +37,7 @@ body {
   line-height: 1.6;
 }
 
-/* ──────────────────────────────────────────
-   ANIMATIONS
-────────────────────────────────────────── */
+/* ANIMATIONS */
 @keyframes floatUp {
   0% { opacity: 0; transform: translateY(40px) scale(0.9); }
   100% { opacity: 1; transform: translateY(0) scale(1); }
@@ -70,9 +68,12 @@ body {
   100% { opacity: 1; transform: translateY(0); }
 }
 
-/* ──────────────────────────────────────────
-   GRAIN EFFECT
-────────────────────────────────────────── */
+@keyframes slideInMenu {
+  0% { transform: translateX(-100%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+/* GRAIN EFFECT */
 body::before {
   content: '';
   position: fixed;
@@ -83,9 +84,7 @@ body::before {
   pointer-events: none;
 }
 
-/* ──────────────────────────────────────────
-   CURSOR
-────────────────────────────────────────── */
+/* CURSOR */
 #cursor {
   position: fixed;
   width: 12px;
@@ -117,9 +116,7 @@ body::before {
   #cursor, #cursorRing { display: block; }
 }
 
-/* ──────────────────────────────────────────
-   NAVIGATION
-────────────────────────────────────────── */
+/* NAVIGATION */
 nav {
   position: fixed;
   top: 0;
@@ -187,21 +184,94 @@ nav {
   width: 100%;
 }
 
+/* HAMBURGER MENU */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 6px;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 2.5px;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* MOBILE MENU */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, rgba(45, 27, 78, 0.98), rgba(10, 10, 15, 0.98));
+  backdrop-filter: blur(10px);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  padding-top: 6rem;
+  transition: left 0.4s ease;
+  overflow-y: auto;
+}
+
+.mobile-menu.active {
+  left: 0;
+  animation: slideInMenu 0.4s ease;
+}
+
+.mobile-menu a {
+  padding: 1.5rem 1.5rem;
+  font-size: 1.1rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(232, 201, 122, 0.1);
+  font-weight: 600;
+}
+
+.mobile-menu a:hover {
+  color: var(--accent);
+  background: rgba(232, 201, 122, 0.08);
+  padding-left: 2rem;
+}
+
 @media (max-width: 768px) {
   nav {
     padding: 1rem 4vw;
   }
+  
   .nav-links {
     display: none;
   }
+  
+  .hamburger {
+    display: flex;
+  }
+  
   .logo {
     font-size: 1.2rem;
   }
 }
 
-/* ──────────────────────────────────────────
-   PROGRESS BAR
-────────────────────────────────────────── */
+/* PROGRESS BAR */
 #progress {
   position: fixed;
   top: 0;
@@ -214,9 +284,7 @@ nav {
   box-shadow: 0 0 20px rgba(232, 201, 122, 0.5);
 }
 
-/* ──────────────────────────────────────────
-   HERO CANVAS SECTION
-────────────────────────────────────────── */
+/* HERO CANVAS SECTION */
 .hero-canvas-wrapper {
   position: relative;
   width: 100%;
@@ -294,9 +362,7 @@ nav {
   animation: fadeInUp 1s ease-out 0.4s both;
 }
 
-/* ──────────────────────────────────────────
-   BUTTONS
-────────────────────────────────────────── */
+/* BUTTONS */
 .btn {
   font-size: 0.65rem;
   letter-spacing: 0.3em;
@@ -355,9 +421,7 @@ nav {
   box-shadow: 0 10px 30px rgba(232, 201, 122, 0.5);
 }
 
-/* ──────────────────────────────────────────
-   SECTIONS
-────────────────────────────────────────── */
+/* SECTIONS */
 .section {
   padding: 6rem 5vw;
   position: relative;
@@ -420,9 +484,7 @@ nav {
   animation: fadeInUp 1s ease-out;
 }
 
-/* ──────────────────────────────────────────
-   ABOUT SECTION
-────────────────────────────────────────── */
+/* ABOUT SECTION */
 .section.about {
   background: linear-gradient(135deg, rgba(45, 27, 78, 0.3), rgba(45, 27, 78, 0.1));
   border-top: 1px solid rgba(232, 201, 122, 0.1);
@@ -513,9 +575,7 @@ nav {
   color: var(--accent);
 }
 
-/* ──────────────────────────────────────────
-   SKILLS SECTION
-────────────────────────────────────────── */
+/* SKILLS SECTION */
 .section.skills {
   background: linear-gradient(135deg, rgba(232, 201, 122, 0.05), rgba(45, 27, 78, 0.1));
   border-top: 1px solid rgba(232, 201, 122, 0.1);
@@ -585,9 +645,7 @@ nav {
   z-index: 2;
 }
 
-/* ──────────────────────────────────────────
-   PROJECTS SECTION
-────────────────────────────────────────── */
+/* PROJECTS SECTION */
 .section.projects {
   background: linear-gradient(135deg, rgba(45, 27, 78, 0.2), rgba(45, 27, 78, 0.1));
   border-top: 1px solid rgba(232, 201, 122, 0.1);
@@ -691,9 +749,7 @@ nav {
   z-index: 2;
 }
 
-/* ──────────────────────────────────────────
-   EXPERIENCE SECTION
-────────────────────────────────────────── */
+/* EXPERIENCE SECTION */
 .section.experience {
   background: linear-gradient(135deg, rgba(45, 27, 78, 0.1), transparent);
   border-top: 1px solid rgba(232, 201, 122, 0.1);
@@ -779,9 +835,7 @@ nav {
   line-height: 1.8;
 }
 
-/* ──────────────────────────────────────────
-   FOOTER
-────────────────────────────────────────── */
+/* FOOTER */
 .footer {
   padding: 5rem 5vw;
   text-align: center;
@@ -834,9 +888,7 @@ nav {
   text-shadow: 0 0 10px rgba(232, 201, 122, 0.5);
 }
 
-/* ──────────────────────────────────────────
-   RESPONSIVE
-────────────────────────────────────────── */
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .section {
     padding: 4rem 4vw;
@@ -870,14 +922,10 @@ nav {
 </head>
 <body>
 
-<!-- PROGRESS BAR -->
 <div id="progress"></div>
-
-<!-- CURSOR -->
 <div id="cursor"></div>
 <div id="cursorRing"></div>
 
-<!-- NAVIGATION -->
 <nav>
   <a href="#home" class="logo">S<em>.</em>Prem</a>
   <ul class="nav-links">
@@ -886,9 +934,20 @@ nav {
     <li><a href="#work">Work</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 </nav>
 
-<!-- HERO CANVAS -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#work">Work</a>
+  <a href="#contact">Contact</a>
+</div>
+
 <div class="hero-canvas-wrapper" id="home">
   <canvas id="heroCanvas"></canvas>
   <div class="hero-content">
@@ -904,7 +963,6 @@ nav {
   </div>
 </div>
 
-<!-- ABOUT SECTION -->
 <section class="section about" id="about">
   <div class="section-inner">
     <p class="section-tag">Who I Am</p>
@@ -912,7 +970,6 @@ nav {
     <p class="section-text">
       I'm a passionate developer from Jabalpur crafting beautiful, performant digital solutions.
     </p>
-
     <div class="about-grid">
       <div class="about-card">
         <h3>What I Do</h3>
@@ -923,14 +980,12 @@ nav {
           <li>Database Design & Optimization</li>
         </ul>
       </div>
-
       <div class="about-card">
         <h3>My Philosophy</h3>
         <p>
           Clean code. User-centric design. Performance-first mentality. Every project is a chance to create something meaningful.
         </p>
       </div>
-
       <div class="about-card">
         <h3>Core Strengths</h3>
         <ul>
@@ -944,38 +999,31 @@ nav {
   </div>
 </section>
 
-<!-- SKILLS SECTION -->
 <section class="section skills" id="skills">
   <div class="section-inner">
     <p class="section-tag">Technical Capabilities</p>
     <h2 class="section-title">My Tech <em>Stack</em></h2>
-
     <div class="skills-grid">
       <div class="skill-card">
         <h3>Frontend</h3>
         <p>HTML5, CSS3, JavaScript, React, Tailwind CSS</p>
       </div>
-
       <div class="skill-card">
         <h3>Backend</h3>
         <p>Node.js, Express, REST APIs, JWT Authentication</p>
       </div>
-
       <div class="skill-card">
         <h3>Programming</h3>
         <p>C, C++, Java, Python, OOP, DSA</p>
       </div>
-
       <div class="skill-card">
         <h3>Databases</h3>
         <p>MongoDB, MySQL, DBMS, Query Optimization</p>
       </div>
-
       <div class="skill-card">
         <h3>Tools & Platforms</h3>
         <p>WordPress, Shopify, Git, Figma, VS Code</p>
       </div>
-
       <div class="skill-card">
         <h3>Soft Skills</h3>
         <p>Leadership, Collaboration, Communication, Problem-Solving</p>
@@ -984,25 +1032,21 @@ nav {
   </div>
 </section>
 
-<!-- EXPERIENCE SECTION -->
 <section class="section experience" id="experience">
   <div class="section-inner">
     <p class="section-tag">Professional Journey</p>
     <h2 class="section-title">Work <em>Experience</em></h2>
-
     <div class="experience-timeline">
       <div class="exp-item">
         <div class="exp-title">Web Developer</div>
         <div class="exp-company">Sampada Herbs & Spices, Jabalpur</div>
         <div class="exp-desc">Nov 2025 – Jan 2026. Developed a fully responsive e-commerce website improving online visibility and product showcase.</div>
       </div>
-
       <div class="exp-item">
         <div class="exp-title">Web Development Intern</div>
         <div class="exp-company">Yashi IT Services, Indore</div>
         <div class="exp-desc">July 2025 – Aug 2025. Built responsive web pages with HTML, CSS, JavaScript, and Tailwind CSS. Customized Shopify and WordPress websites.</div>
       </div>
-
       <div class="exp-item">
         <div class="exp-title">Cyber Security Intern</div>
         <div class="exp-company">CISCO Virtual Internship Program</div>
@@ -1012,12 +1056,10 @@ nav {
   </div>
 </section>
 
-<!-- PROJECTS SECTION -->
 <section class="section projects" id="work">
   <div class="section-inner">
     <p class="section-tag">Selected Work</p>
     <h2 class="section-title">Recent <em>Projects</em></h2>
-
     <div class="projects-grid">
       <div class="project-card">
         <h3>Sampada Herbs & Spices Website</h3>
@@ -1032,7 +1074,6 @@ nav {
           <a href="https://github.com/SATYA-PREM" class="btn btn-secondary">GitHub</a>
         </div>
       </div>
-
       <div class="project-card">
         <h3>E-Learning Platform</h3>
         <p class="project-desc">Web-based learning management system with course management, student enrollment, and progress tracking capabilities.</p>
@@ -1046,7 +1087,6 @@ nav {
           <a href="https://github.com/SATYA-PREM" class="btn btn-secondary">GitHub</a>
         </div>
       </div>
-
       <div class="project-card">
         <h3>Medical Record System (EHR Model)</h3>
         <p class="project-desc">Electronic Health Record system developed during Smart India Hackathon with secure patient data management.</p>
@@ -1060,7 +1100,6 @@ nav {
           <a href="https://github.com/SATYA-PREM" class="btn btn-secondary">GitHub</a>
         </div>
       </div>
-
       <div class="project-card">
         <h3>Professional Website Portfolio</h3>
         <p class="project-desc">Created multiple custom websites for different clients using modern frontend technologies.</p>
@@ -1078,25 +1117,21 @@ nav {
   </div>
 </section>
 
-<!-- ACHIEVEMENTS -->
 <section class="section" style="background: linear-gradient(135deg, rgba(232, 201, 122, 0.1), rgba(45, 27, 78, 0.15)); border-top: 1px solid rgba(232, 201, 122, 0.1);">
   <div class="section-inner">
     <p class="section-tag">Achievements</p>
     <h2 class="section-title">Recognized <em>Accomplishments</em></h2>
-
     <div class="skills-grid">
       <div class="skill-card" style="text-align: center;">
         <div style="font-size: 3rem; color: var(--accent); margin-bottom: 0.5rem; font-weight: 900;">8+</div>
         <h3 style="color: var(--accent); font-family: 'Montserrat', sans-serif;">Years of Learning</h3>
         <p>Strong foundation in programming, DSA, and system design</p>
       </div>
-
       <div class="skill-card" style="text-align: center;">
         <div style="font-size: 3rem; color: var(--accent); margin-bottom: 0.5rem; font-weight: 900;">90+</div>
         <h3 style="color: var(--accent); font-family: 'Montserrat', sans-serif;">Projects Built</h3>
         <p>Web, mobile, and desktop applications portfolio</p>
       </div>
-
       <div class="skill-card" style="text-align: center;">
         <div style="font-size: 3rem; color: var(--accent); margin-bottom: 0.5rem; font-weight: 900;">2629</div>
         <h3 style="color: var(--accent); font-family: 'Montserrat', sans-serif;">Global Rank</h3>
@@ -1106,7 +1141,6 @@ nav {
   </div>
 </section>
 
-<!-- FOOTER -->
 <section class="footer" id="contact">
   <div>
     <h2 class="footer-h">Ready to Build Something <em>Great</em>?</h2>
@@ -1114,13 +1148,11 @@ nav {
       I'm actively looking for internship opportunities and exciting projects. Let's connect and create something meaningful together.
     </p>
   </div>
-
   <div class="footer-links">
     <a href="mailto:satyaprem1714@gmail.com" class="btn btn-primary">Email Me</a>
     <a href="https://linkedin.com/in/satya-prem-3852033A9/" class="btn btn-secondary" target="_blank">LinkedIn</a>
     <a href="https://github.com/SATYA-PREM" class="btn btn-secondary" target="_blank">GitHub</a>
   </div>
-
   <div class="footer-meta">
     <p>Satya Prem | <a href="tel:+919931798085">+91-9931798085</a> | Jabalpur, Madhya Pradesh</p>
   </div>
@@ -1128,6 +1160,24 @@ nav {
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
+// MOBILE MENU TOGGLE
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  mobileMenu.classList.toggle('active');
+});
+
+// Close mobile menu when a link is clicked
+document.querySelectorAll('.mobile-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    mobileMenu.classList.remove('active');
+  });
+});
+
+// EXISTING SCRIPT
 const isMobile = window.innerWidth < 768;
 const mouse = {x: 0, y: 0, nx: 0, ny: 0};
 let scrollY = 0;
