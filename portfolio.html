@@ -61,12 +61,13 @@ body {
   display: none;
 }
 
+/* Show cursor only on desktop */
 @media (hover: hover) and (pointer: fine) {
   #cursor, #cursorRing { display: block; }
 }
 
 /* ──────────────────────────────────────────
-   GRAIN EFFECT
+   GRAIN EFFECT (subtle, performant)
 ────────────────────────────────────────── */
 body::before {
   content: '';
@@ -123,6 +124,7 @@ nav {
   color: var(--text-dim);
   text-decoration: none;
   transition: color 0.3s ease;
+  padding: 0.5rem 1rem;
 }
 
 .nav-links a:hover {
@@ -153,35 +155,48 @@ nav {
 }
 
 /* ──────────────────────────────────────────
-   HERO/CANVAS SECTION
+   HERO SECTION
 ────────────────────────────────────────── */
-.hero-canvas-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100vh;
+.hero {
   min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 5vw 3rem;
+  background: radial-gradient(ellipse at bottom, rgba(45, 27, 78, 0.3), transparent);
+  position: relative;
   overflow: hidden;
-  background: #0a0a0f;
 }
 
-#heroCanvas {
-  display: block;
-  width: 100%;
-  height: 100%;
+.hero::before {
+  content: '';
   position: absolute;
-  top: 0;
-  left: 0;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(232, 201, 122, 0.08), transparent);
+  border-radius: 50%;
+  top: 10%;
+  right: -10%;
+  z-index: 0;
 }
 
 .hero-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+  position: relative;
   z-index: 10;
+  text-align: center;
   max-width: 700px;
-  padding: 2rem;
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero-tag {
@@ -190,6 +205,7 @@ nav {
   text-transform: uppercase;
   color: var(--accent);
   margin-bottom: 1.5rem;
+  animation: fadeInUp 1s ease-out 0.1s both;
 }
 
 .hero-h1 {
@@ -198,7 +214,7 @@ nav {
   font-weight: 200;
   line-height: 1.1;
   margin-bottom: 1.5rem;
-  text-shadow: 0 0 20px rgba(0,0,0,0.5);
+  animation: fadeInUp 1s ease-out 0.2s both;
 }
 
 .hero-h1 em {
@@ -208,12 +224,12 @@ nav {
 
 .hero-sub {
   font-size: clamp(0.85rem, 2vw, 1rem);
-  color: rgba(242, 239, 232, 0.7);
+  color: var(--text-dim);
   letter-spacing: 0.05em;
   max-width: 500px;
   margin: 0 auto 2.5rem;
   line-height: 1.8;
-  text-shadow: 0 0 10px rgba(0,0,0,0.5);
+  animation: fadeInUp 1s ease-out 0.3s both;
 }
 
 .hero-cta {
@@ -221,11 +237,9 @@ nav {
   gap: 1.5rem;
   justify-content: center;
   flex-wrap: wrap;
+  animation: fadeInUp 1s ease-out 0.4s both;
 }
 
-/* ──────────────────────────────────────────
-   BUTTONS
-────────────────────────────────────────── */
 .btn {
   font-size: 0.65rem;
   letter-spacing: 0.3em;
@@ -258,6 +272,36 @@ nav {
 .btn-secondary:hover {
   background: var(--accent);
   color: var(--bg);
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.scroll-hint span {
+  font-size: 0.55rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: rgba(232, 201, 122, 0.4);
+}
+
+.scroll-arrow {
+  width: 1px;
+  height: 30px;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(8px); }
 }
 
 /* ──────────────────────────────────────────
@@ -318,6 +362,7 @@ nav {
 .about-card {
   padding: 2rem;
   border-left: 2px solid var(--accent);
+  position: relative;
 }
 
 .about-card h3 {
@@ -335,6 +380,10 @@ nav {
 
 .about-card ul {
   list-style: none;
+}
+
+.about-card li {
+  padding: 0.4rem 0;
 }
 
 .about-card li::before {
@@ -515,6 +564,10 @@ nav {
   background: rgba(45, 27, 78, 0.1);
 }
 
+.footer-cta {
+  margin-bottom: 2rem;
+}
+
 .footer-h {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.8rem, 4vw, 3rem);
@@ -556,6 +609,17 @@ nav {
    RESPONSIVE
 ────────────────────────────────────────── */
 @media (max-width: 768px) {
+  .hero {
+    padding: 5rem 4vw 2rem;
+  }
+
+  .hero::before {
+    width: 250px;
+    height: 250px;
+    top: 20%;
+    right: -50px;
+  }
+
   .section {
     padding: 4rem 4vw;
   }
@@ -578,12 +642,16 @@ nav {
   }
 }
 
+/* ──────────────────────────────────────────
+   PERFORMANCE: Disable animations on low-end
+────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;
     transition: none !important;
   }
 }
+
 </style>
 </head>
 <body>
@@ -606,22 +674,25 @@ nav {
   </ul>
 </nav>
 
-<!-- HERO SECTION WITH CANVAS -->
-<div class="hero-canvas-wrapper" id="home">
-  <canvas id="heroCanvas"></canvas>
+<!-- HERO SECTION -->
+<section class="hero" id="home">
   <div class="hero-content">
     <p class="hero-tag">Full Stack Developer</p>
     <h1 class="hero-h1">Building Digital <em>Experiences</em></h1>
     <p class="hero-sub">
       I craft responsive websites and scalable web applications using modern frontend technologies, 
-      with a focus on performance and user experience.
+      with a focus on performance and user experience. Currently pursuing BTech in Computer Science.
     </p>
     <div class="hero-cta">
-      <a href="#about" class="btn btn-primary">View My Work</a>
+      <a href="#work" class="btn btn-primary">View My Work</a>
       <a href="#contact" class="btn btn-secondary">Get in Touch</a>
     </div>
   </div>
-</div>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
 
 <!-- ABOUT SECTION -->
 <section class="section about" id="about">
@@ -716,13 +787,13 @@ nav {
       <div class="exp-item">
         <div class="exp-title">Web Developer</div>
         <div class="exp-company">Sampada Herbs & Spices, Jabalpur</div>
-        <div class="exp-desc">Nov 2025 – Jan 2026 • Developed a fully responsive and modern website for the store, improving online visibility and showcasing products.</div>
+        <div class="exp-desc">Nov 2025 – Jan 2026 • Developed a fully responsive and modern website for the store, improving online visibility and showcasing products like herbs, spices, and natural wellness items.</div>
       </div>
 
       <div class="exp-item">
         <div class="exp-title">Web Development Intern</div>
         <div class="exp-company">Yashi IT Services, Indore</div>
-        <div class="exp-desc">July 2025 – Aug 2025 • Developed responsive web pages using HTML, CSS, JavaScript, and Tailwind CSS. Customized Shopify and WordPress websites.</div>
+        <div class="exp-desc">July 2025 – Aug 2025 • Developed responsive web pages using HTML, CSS, JavaScript, and Tailwind CSS. Customized Shopify and WordPress websites with theme editing and plugin integration.</div>
       </div>
 
       <div class="exp-item">
@@ -842,7 +913,7 @@ nav {
 
 <!-- FOOTER / CONTACT -->
 <section class="footer" id="contact">
-  <div>
+  <div class="footer-cta">
     <h2 class="footer-h">Ready to Build Something <em>Great</em>?</h2>
     <p class="section-text" style="margin-bottom: 1.5rem;">
       I'm actively looking for internship opportunities and exciting projects. Let's connect!
@@ -864,50 +935,46 @@ nav {
   </div>
 </section>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
-// ══════════════════════════════════════════════════════════════
-//   MOBILE DETECTION & OPTIMIZATION
-// ══════════════════════════════════════════════════════════════
-const isMobile = window.innerWidth < 768;
-const mouse = {x: 0, y: 0, nx: 0, ny: 0, world: {x: 0, y: 0}};
-let scrollY = 0;
-
-// ── CURSOR (Desktop Only) ──
+// ══════════════════════════════════════════════════════
+//   OPTIMIZED CURSOR (Desktop Only)
+// ══════════════════════════════════════════════════════
 const cursor = document.getElementById('cursor');
 const cursorRing = document.getElementById('cursorRing');
 let curX = 0, curY = 0, ringX = 0, ringY = 0;
 
+// Only track on desktop with hover support
 if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
   document.addEventListener('mousemove', (e) => {
     curX = e.clientX;
     curY = e.clientY;
-    mouse.nx = (e.clientX / window.innerWidth) * 2 - 1;
-    mouse.ny = -(e.clientY / window.innerHeight) * 2 + 1;
-    mouse.x = e.clientX;
-    mouse.y = e.clientY;
   });
 
+  let frame = 0;
   function animateCursor() {
     ringX += (curX - ringX) * 0.15;
     ringY += (curY - ringY) * 0.15;
     cursor.style.transform = `translate(${curX}px, ${curY}px) translate(-50%, -50%)`;
     cursorRing.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%, -50%)`;
-    requestAnimationFrame(animateCursor);
+    frame = requestAnimationFrame(animateCursor);
   }
   animateCursor();
 }
 
-// ── PROGRESS BAR ──
+// ══════════════════════════════════════════════════════
+//   PROGRESS BAR
+// ══════════════════════════════════════════════════════
 const progressBar = document.getElementById('progress');
 window.addEventListener('scroll', () => {
-  scrollY = window.scrollY;
+  const scrollTop = window.scrollY;
   const docHeight = document.documentElement.scrollHeight - window.innerHeight;
   const scrollPercent = (scrollTop / docHeight) * 100;
   progressBar.style.width = scrollPercent + '%';
 });
 
-// ── SMOOTH SCROLL ──
+// ══════════════════════════════════════════════════════
+//   SMOOTH SCROLL ENHANCEMENT
+// ══════════════════════════════════════════════════════
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     const href = this.getAttribute('href');
@@ -921,178 +988,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// ══════════════════════════════════════════════════════════════
-//   THREE.JS HEXAGONAL CANVAS - MOBILE OPTIMIZED
-// ══════════════════════════════════════════════════════════════
-(function initCanvas() {
-  const canvas = document.getElementById('heroCanvas');
-  let W = canvas.parentElement.clientWidth;
-  let H = canvas.parentElement.clientHeight;
-  
-  const renderer = new THREE.WebGLRenderer({
-    canvas: canvas,
-    antialias: !isMobile,
-    alpha: false,
-    powerPreference: 'high-performance'
-  });
-  
-  renderer.setSize(W, H);
-  renderer.setPixelRatio(isMobile ? 1 : Math.min(devicePixelRatio, 2));
-  renderer.shadowMap.enabled = true;
-  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-  renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.1;
-  renderer.setClearColor(0x1a0a1a, 1);
+// ══════════════════════════════════════════════════════
+//   INTERSECTION OBSERVER FOR FADE-IN
+// ══════════════════════════════════════════════════════
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -100px 0px'
+};
 
-  const scene = new THREE.Scene();
-  scene.background = new THREE.Color(0x1a0a1a);
-  scene.fog = new THREE.FogExp2(0x1a0a1a, 0.025);
-
-  const camera = new THREE.PerspectiveCamera(42, W / H, 0.1, 400);
-  camera.position.set(0, 30, 55);
-  camera.lookAt(0, 0, 0);
-
-  // Lights
-  scene.add(new THREE.AmbientLight(0xffffff, 0.3));
-  
-  const keyLight = new THREE.DirectionalLight(0xfff5e6, 2.5);
-  keyLight.position.set(25, 60, 30);
-  keyLight.castShadow = true;
-  keyLight.shadow.mapSize.set(1024, 1024);
-  keyLight.shadow.camera.left = -60;
-  keyLight.shadow.camera.right = 60;
-  keyLight.shadow.camera.top = 60;
-  keyLight.shadow.camera.bottom = -60;
-  keyLight.shadow.bias = -0.001;
-  scene.add(keyLight);
-  
-  scene.add(new THREE.DirectionalLight(0xffbbaa, 0.4).translateX(-30).translateY(20));
-
-  // Hexagon group
-  const hexGroup = new THREE.Group();
-  scene.add(hexGroup);
-
-  function hexPts(r) {
-    const pts = [];
-    for (let i = 0; i < 6; i++) {
-      const a = Math.PI / 180 * (60 * i - 30);
-      pts.push(new THREE.Vector2(r * Math.cos(a), r * Math.sin(a)));
-    }
-    return pts;
-  }
-
-  const hexes = [];
-  const ROWS = 7, COLS = 9, R = 5.8, H2 = R * Math.sqrt(3), GAP = 0.25;
-  
-  for (let r = 0; r < ROWS; r++) {
-    for (let c = 0; c < COLS; c++) {
-      const baseH = 1.5 + Math.random() * 5;
-      const roseV = 0.72 + Math.random() * 0.18;
-      
-      const mat = new THREE.MeshStandardMaterial({
-        color: new THREE.Color(roseV * 0.9, roseV * 0.7, roseV * 0.68),
-        roughness: 0.35 + Math.random() * 0.2,
-        metalness: 0.15 + Math.random() * 0.25
-      });
-
-      const shape = new THREE.Shape(hexPts(R - GAP));
-      const geo = new THREE.ExtrudeGeometry(shape, {
-        depth: baseH,
-        bevelEnabled: true,
-        bevelSize: 0.2,
-        bevelThickness: 0.15,
-        bevelSegments: 3
-      });
-      
-      geo.rotateX(-Math.PI / 2);
-      
-      const mesh = new THREE.Mesh(geo, mat);
-      const x = (c - (COLS - 1) / 2) * (H2 + 0.1) + (r % 2) * (H2 / 2 + 0.05);
-      const z = (r - (ROWS - 1) / 2) * (R * 1.5 + 0.1);
-      
-      mesh.position.set(x, -baseH / 2, z);
-      mesh.castShadow = true;
-      mesh.receiveShadow = true;
-      mesh.userData = {baseH, baseX: x, baseZ: z, curH: baseH, col: c, row: r};
-      
-      hexGroup.add(mesh);
-      hexes.push(mesh);
-    }
-  }
-
-  const groundPlane = new THREE.Plane(new THREE.Vector3(0, 1, 0), 0);
-  const ray = new THREE.Raycaster();
-  const mw = new THREE.Vector3();
-  
-  let t = 0;
-  let scrollFactor = 0;
-  
-  window.addEventListener('scroll', () => {
-    scrollFactor = window.scrollY;
-  });
-
-  function loop() {
-    requestAnimationFrame(loop);
-    t += 0.007;
-
-    // Camera follow mouse
-    camera.position.x += (mouse.nx * 8 - camera.position.x) * 0.03;
-    camera.position.z = 55 + mouse.ny * 5;
-    camera.lookAt(0, 0, 0);
-    
-    keyLight.position.x = 25 + mouse.nx * 20;
-    
-    ray.setFromCamera({x: mouse.nx, y: mouse.ny}, camera);
-    ray.ray.intersectPlane(groundPlane, mw);
-
-    // Apply scroll rotation
-    hexGroup.rotation.y = scrollFactor * 0.005;
-
-    hexes.forEach(h => {
-      const {baseH, baseX, baseZ, col, row} = h.userData;
-      const dx = mw.x - baseX;
-      const dz = mw.z - baseZ;
-      const dist = Math.sqrt(dx * dx + dz * dz);
-      
-      const wave = Math.sin(t + col * 0.4 + row * 0.35) * 0.4;
-      let extra = wave;
-      
-      if (dist < 22) {
-        const tv = 1 - dist / 22;
-        extra += 9 * (tv * tv * (3 - 2 * tv));
-      }
-      
-      const target = baseH + extra;
-      h.userData.curH += (target - h.userData.curH) * 0.06;
-      h.position.y = -h.userData.curH / 2 + extra * 0.5;
-      h.scale.y = h.userData.curH / baseH;
-    });
-
-    renderer.render(scene, camera);
-  }
-  
-  loop();
-
-  // Smart resize - no full reload on mobile
-  let resizeTimeout;
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => {
-      const newW = canvas.parentElement.clientWidth;
-      const newH = canvas.parentElement.clientHeight;
-      
-      if (Math.abs(newW - W) > 50 || Math.abs(newH - H) > 50) {
-        W = newW;
-        H = newH;
-        camera.aspect = W / H;
-        camera.updateProjectionMatrix();
-        renderer.setSize(W, H);
-      }
-    }, 300);
-  });
-})();
-
-// ── INTERSECTION OBSERVER ──
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -1100,14 +1003,54 @@ const observer = new IntersectionObserver((entries) => {
       entry.target.style.transform = 'translateY(0)';
     }
   });
-}, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' });
+}, observerOptions);
 
+// Observe skill cards and project cards for fade-in effect
 document.querySelectorAll('.skill-card, .project-card, .about-card').forEach(el => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(20px)';
   el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
   observer.observe(el);
 });
+
+// ══════════════════════════════════════════════════════
+//   ACTIVE NAV LINK HIGHLIGHTING
+// ══════════════════════════════════════════════════════
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+    if (scrollY >= sectionTop - 200) {
+      current = section.getAttribute('id');
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href').slice(1) === current) {
+      link.style.color = 'var(--accent)';
+    } else {
+      link.style.color = 'rgba(242, 239, 232, 0.45)';
+    }
+  });
+});
+
+// ══════════════════════════════════════════════════════
+//   PERFORMANCE: Disable animations on reduced motion
+// ══════════════════════════════════════════════════════
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.documentElement.style.scrollBehavior = 'auto';
+  document.querySelectorAll('*').forEach(el => {
+    el.style.animation = 'none';
+    el.style.transition = 'none';
+  });
+}
+
+console.log('Portfolio loaded successfully - No canvas reloads, optimized for all devices!');
 </script>
 
 </body>
