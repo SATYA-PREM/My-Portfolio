@@ -58,11 +58,6 @@ body {
   100% { opacity: 1; transform: translateX(0); }
 }
 
-@keyframes rotate3d {
-  0% { transform: rotateX(0) rotateY(0); }
-  100% { transform: rotateX(10deg) rotateY(10deg); }
-}
-
 @keyframes fadeInUp {
   0% { opacity: 0; transform: translateY(30px); }
   100% { opacity: 1; transform: translateY(0); }
@@ -80,7 +75,7 @@ body::before {
   inset: 0;
   z-index: 9990;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-  opacity: 0.03;
+  opacity: 0.02;
   pointer-events: none;
 }
 
@@ -435,9 +430,8 @@ nav {
   right: -50%;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle, rgba(232, 201, 122, 0.05), transparent);
+  background: radial-gradient(circle, rgba(232, 201, 122, 0.03), transparent);
   pointer-events: none;
-  animation: rotate3d 20s linear infinite;
 }
 
 .section-inner {
@@ -610,7 +604,6 @@ nav {
   width: 200%;
   height: 200%;
   background: radial-gradient(circle, rgba(232, 201, 122, 0.1), transparent);
-  animation: rotate3d 6s linear infinite;
 }
 
 .skill-card:nth-child(1) { animation-delay: 0.1s; }
@@ -889,26 +882,27 @@ nav {
 }
 
 /* RESPONSIVE */
+.skill-card, .project-card, .about-card {
+  will-change: opacity, transform;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
 @media (max-width: 768px) {
-  .section {
-    padding: 4rem 4vw;
+  .skill-card, .project-card, .about-card {
+    will-change: auto;
   }
-
-  .about-grid {
-    gap: 1.5rem;
+  
+  /* Disable some animations on mobile for better performance */
+  .skill-card::after {
+    animation: none;
   }
-
-  .skills-grid {
-    grid-template-columns: 1fr;
+  
+  .about-card::before {
+    display: none;
   }
-
-  .project-links {
-    flex-direction: column;
-  }
-
-  .project-links .btn {
-    width: 100%;
-    text-align: center;
+  
+  .project-card::before {
+    display: none;
   }
 }
 
@@ -927,7 +921,7 @@ nav {
 <div id="cursorRing"></div>
 
 <nav>
-  <a href="#home" class="logo">S<em>.</em>Prem</a>
+  <a href="#home" class="logo">Satya<em>.</em>Prem</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
@@ -1169,7 +1163,6 @@ hamburger.addEventListener('click', () => {
   mobileMenu.classList.toggle('active');
 });
 
-// Close mobile menu when a link is clicked
 document.querySelectorAll('.mobile-menu a').forEach(link => {
   link.addEventListener('click', () => {
     hamburger.classList.remove('active');
@@ -1177,7 +1170,7 @@ document.querySelectorAll('.mobile-menu a').forEach(link => {
   });
 });
 
-// EXISTING SCRIPT
+// EXISTING SCRIPT - OPTIMIZED
 const isMobile = window.innerWidth < 768;
 const mouse = {x: 0, y: 0, nx: 0, ny: 0};
 let scrollY = 0;
@@ -1186,6 +1179,7 @@ const cursor = document.getElementById('cursor');
 const cursorRing = document.getElementById('cursorRing');
 let curX = 0, curY = 0, ringX = 0, ringY = 0;
 
+// MOUSE/TOUCH INTERACTION
 if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
   document.addEventListener('mousemove', (e) => {
     curX = e.clientX;
@@ -1204,15 +1198,37 @@ if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
     requestAnimationFrame(animateCursor);
   }
   animateCursor();
+} else if (isMobile) {
+  // TOUCH SUPPORT FOR MOBILE
+  document.addEventListener('touchmove', (e) => {
+    if (e.touches && e.touches.length > 0) {
+      const touch = e.touches[0];
+      curX = touch.clientX;
+      curY = touch.clientY;
+      mouse.nx = (touch.clientX / window.innerWidth) * 2 - 1;
+      mouse.ny = -(touch.clientY / window.innerHeight) * 2 + 1;
+      mouse.x = touch.clientX;
+      mouse.y = touch.clientY;
+    }
+  }, { passive: true });
 }
 
 const progressBar = document.getElementById('progress');
+let scrollTimeout;
+let lastScrollProgress = 0;
+
 window.addEventListener('scroll', () => {
-  scrollY = window.scrollY;
+  // Only update progress bar if changed significantly (mobile optimization)
   const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const scrollPercent = (scrollY / docHeight) * 100;
-  progressBar.style.width = scrollPercent + '%';
-});
+  const scrollPercent = (window.scrollY / docHeight) * 100;
+  
+  if (Math.abs(scrollPercent - lastScrollProgress) > 1 || scrollPercent === 0 || scrollPercent === 100) {
+    progressBar.style.width = scrollPercent + '%';
+    lastScrollProgress = scrollPercent;
+  }
+  
+  scrollY = window.scrollY;
+}, { passive: true });
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
@@ -1233,12 +1249,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   let H = canvas.parentElement.clientHeight;
   
   const renderer = new THREE.WebGLRenderer({
-    canvas, antialias: !isMobile, alpha: false, powerPreference: 'high-performance'
+    canvas, antialias: !isMobile, alpha: false, powerPreference: 'low-power'
   });
   
   renderer.setSize(W, H);
   renderer.setPixelRatio(isMobile ? 1 : Math.min(devicePixelRatio, 2));
-  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.enabled = false;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 1.1;
   renderer.setClearColor(0x1a0a1a, 1);
@@ -1251,20 +1267,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   camera.position.set(0, 30, 55);
   camera.lookAt(0, 0, 0);
 
-  scene.add(new THREE.AmbientLight(0xffffff, 0.3));
+  scene.add(new THREE.AmbientLight(0xffffff, 0.4));
   
-  const keyLight = new THREE.DirectionalLight(0xfff5e6, 2.5);
+  const keyLight = new THREE.DirectionalLight(0xfff5e6, 2);
   keyLight.position.set(25, 60, 30);
-  keyLight.castShadow = true;
-  keyLight.shadow.mapSize.set(1024, 1024);
-  keyLight.shadow.camera.left = -60;
-  keyLight.shadow.camera.right = 60;
-  keyLight.shadow.camera.top = 60;
-  keyLight.shadow.camera.bottom = -60;
-  keyLight.shadow.bias = -0.001;
+  keyLight.castShadow = false;
   scene.add(keyLight);
   
-  scene.add(new THREE.DirectionalLight(0xffbbaa, 0.4).translateX(-30).translateY(20));
+  scene.add(new THREE.DirectionalLight(0xffbbaa, 0.3).translateX(-30).translateY(20));
 
   const hexGroup = new THREE.Group();
   scene.add(hexGroup);
@@ -1279,7 +1289,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   }
 
   const hexes = [];
-  const ROWS = 7, COLS = 9, R = 5.8, H2 = R * Math.sqrt(3), GAP = 0.25;
+  const ROWS = 5, COLS = 6, R = 5.8, H2 = R * Math.sqrt(3), GAP = 0.25;
   
   for (let r = 0; r < ROWS; r++) {
     for (let c = 0; c < COLS; c++) {
@@ -1288,13 +1298,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       
       const mat = new THREE.MeshStandardMaterial({
         color: new THREE.Color(roseV * 0.9, roseV * 0.7, roseV * 0.68),
-        roughness: 0.35 + Math.random() * 0.2,
-        metalness: 0.15 + Math.random() * 0.25
+        roughness: 0.5,
+        metalness: 0.1,
+        wireframe: false
       });
 
       const shape = new THREE.Shape(hexPts(R - GAP));
       const geo = new THREE.ExtrudeGeometry(shape, {
-        depth: baseH, bevelEnabled: true, bevelSize: 0.2, bevelThickness: 0.15, bevelSegments: 3
+        depth: baseH, bevelEnabled: true, bevelSize: 0.2, bevelThickness: 0.15, bevelSegments: 2
       });
       
       geo.rotateX(-Math.PI / 2);
@@ -1304,8 +1315,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       const z = (r - (ROWS - 1) / 2) * (R * 1.5 + 0.1);
       
       mesh.position.set(x, -baseH / 2, z);
-      mesh.castShadow = true;
-      mesh.receiveShadow = true;
+      mesh.castShadow = false;
+      mesh.receiveShadow = false;
       mesh.userData = {baseH, baseX: x, baseZ: z, curH: baseH, col: c, row: r};
       
       hexGroup.add(mesh);
@@ -1319,26 +1330,40 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   
   let t = 0;
   let scrollFactor = 0;
+  let lastMouseUpdate = 0;
+  let isScrolling = false;
+  let scrollTimeout;
   
   window.addEventListener('scroll', () => {
     scrollFactor = window.scrollY;
-  });
+    isScrolling = true;
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+      isScrolling = false;
+    }, 150);
+  }, { passive: true });
 
   function loop() {
     requestAnimationFrame(loop);
     t += 0.007;
 
-    camera.position.x += (mouse.nx * 8 - camera.position.x) * 0.03;
-    camera.position.z = 55 + mouse.ny * 5;
-    camera.lookAt(0, 0, 0);
-    
-    keyLight.position.x = 25 + mouse.nx * 20;
+    // THROTTLE MOUSE UPDATES - Skip during active scroll on mobile
+    const now = Date.now();
+    if ((now - lastMouseUpdate > 16) && (!isMobile || !isScrolling)) {
+      camera.position.x += (mouse.nx * 8 - camera.position.x) * 0.03;
+      camera.position.z = 55 + mouse.ny * 5;
+      camera.lookAt(0, 0, 0);
+      
+      keyLight.position.x = 25 + mouse.nx * 20;
+      lastMouseUpdate = now;
+    }
     
     ray.setFromCamera({x: mouse.nx, y: mouse.ny}, camera);
     ray.ray.intersectPlane(groundPlane, mw);
 
     hexGroup.rotation.y = scrollFactor * 0.005;
 
+    // OPTIMIZED ANIMATION
     hexes.forEach(h => {
       const {baseH, baseX, baseZ, col, row} = h.userData;
       const dx = mw.x - baseX;
@@ -1382,14 +1407,22 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 })();
 
+// INTERSECTION OBSERVER - Optimized for mobile
+// On mobile: wait until 50% visible before animating
+// On desktop: trigger at 10% visible for smoother experience
+const observerOptions = isMobile 
+  ? { threshold: 0.5, rootMargin: '0px 0px -50px 0px' }
+  : { threshold: 0.1, rootMargin: '0px 0px -100px 0px' };
+
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.style.opacity = '1';
       entry.target.style.transform = 'translateY(0)';
+      observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' });
+}, observerOptions);
 
 document.querySelectorAll('.skill-card, .project-card, .about-card').forEach(el => {
   el.style.opacity = '0';
