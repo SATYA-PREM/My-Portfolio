@@ -183,13 +183,98 @@
       letter-spacing: 0.3em;
       color: var(--text);
       text-decoration: none;
-      animation: glow 3s ease-in-out infinite;
+
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .footer-meta img {
+      width: 42px;
+      height: 42px;
+
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+
+
+      transition: all .35s ease;
+    }
+
+    .footer-meta img:hover {
+      transform: scale(3.0)  translateY(5px);
+    }
+
+    /* image fix */
+    .logo img {
+      width: 42px;
+      height: 42px;
+
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+
+      display: block;
+
+      transition: all .35s ease;
+    }
+
+    /* hover expand */
+    .logo:hover img {
+      transform: scale(3.0)  translateY(10px);
+    }
+    @media (max-width: 900px) {
+      .logo:hover img {
+        transform: scale(3.0)  translateY(8px) translateX(8px);
+      }
     }
 
     .logo em {
       color: var(--accent);
       font-style: normal;
       font-weight: 900;
+    }
+
+    @keyframes glow {
+      0% {
+        text-shadow: 0 0 6px rgba(214, 178, 94, 0.3);
+      }
+
+      50% {
+        text-shadow: 0 0 14px rgba(214, 178, 94, 0.8);
+      }
+
+      100% {
+        text-shadow: 0 0 6px rgba(214, 178, 94, 0.3);
+      }
+    }
+
+    @media (max-width:900px) {
+
+      .logo {
+        font-size: 1.3rem;
+        letter-spacing: 0.2em;
+      }
+
+      .logo img {
+        width: 30px;
+        height: 30px;
+      }
+
+    }
+
+    @media (max-width:600px) {
+
+      .logo {
+        font-size: 1.1rem;
+        letter-spacing: 0.15em;
+      }
+
+      .logo img {
+        width: 26px;
+        height: 26px;
+      }
+
     }
 
     .nav-links {
@@ -321,12 +406,19 @@
       top: 0;
       left: 0;
       height: 3px;
-      background: linear-gradient(to right, var(--accent), #ff6b9d, #7b61ff, var(--accent));
-      z-index: 9995;
       width: 0%;
+      z-index: 9995;
+
+      background: linear-gradient(90deg,
+          #00f5ff,
+          #6a5cff,
+          #c44dff,
+          #ff4ecd);
+
       transition: width 0.15s ease-out;
-      box-shadow: 0 0 20px rgba(232, 201, 122, 0.5);
+      box-shadow: 0 0 12px rgba(106, 92, 255, 0.6);
     }
+
 
     /* HERO CANVAS SECTION */
     .hero-canvas-wrapper {
@@ -1030,10 +1122,17 @@
   <div id="cursorRing"></div>
 
   <nav>
-    <a href="#home" class="logo">Satya<em>.</em>Prem</a>
+    <a href="#home" class="logo">
+
+      <img src="logo.png" alt="logo" class="logo-img">
+
+      <span>Satya<em>.</em>Prem</span>
+
+    </a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
       <li><a href="#work">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -1047,6 +1146,7 @@
   <div class="mobile-menu" id="mobileMenu">
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
     <a href="#work">Work</a>
     <a href="#contact">Contact</a>
   </div>
@@ -1082,50 +1182,60 @@
 
   <section class="section about" id="about">
     <div class="section-inner">
-      <p class="section-tag">Who I Am</p>
+
+      <p class="section-tag">About Me</p>
       <h2 class="section-title">Turning Ideas Into <em>Reality</em></h2>
+
       <p class="section-text">
-        I'm a passionate developer from Jabalpur crafting beautiful, performant digital solutions.
+        I'm a Software Engineer from Jabalpur focused on building scalable web applications,
+        intelligent systems, and modern cloud-ready solutions across Web Development, DevOps,
+        and AI/ML.
       </p>
+
       <div class="about-grid">
+
         <div class="about-card">
-          <h3>What I Do</h3>
+          <h3>What I Build</h3>
           <ul>
-            <li>Full Stack Web Development</li>
-            <li>Responsive UI Design</li>
-            <li>API Architecture & Backend</li>
-            <li>Database Design & Optimization</li>
+            <li>Full-Stack Web Applications</li>
+            <li>AI & Intelligent Systems</li>
+            <li>Secure Backend APIs</li>
+            <li>Scalable Software Platforms</li>
           </ul>
         </div>
+
         <div class="about-card">
-          <h3>My Philosophy</h3>
+          <h3>Engineering Philosophy</h3>
           <p>
-            Clean code. User-centric design. Performance-first mentality. Every project is a chance to create something
-            meaningful.
+            I focus on building systems that are scalable, maintainable, and user-centric.
+            Clean architecture, performance optimization, and practical problem solving
+            guide how I approach every project.
           </p>
         </div>
+
         <div class="about-card">
           <h3>Core Strengths</h3>
           <ul>
-            <li>Problem-Solving & Critical Thinking</li>
-            <li>Fast Learner & Adaptable</li>
-            <li>Team Collaboration</li>
-            <li>Communication & Leadership</li>
+            <li>System Design & Problem Solving</li>
+            <li>Rapid Learning & Adaptability</li>
+            <li>Collaboration & Leadership</li>
+            <li>Performance & Security Mindset</li>
           </ul>
         </div>
+
         <div class="about-card">
-          <h3>Featured Projects</h3>
+          <h3>Notable Projects</h3>
           <ul>
-            <li>AYUSH EMR System – SIH</li>
-            <li>Learning website-CodeforCareer</li>
-            <li>Offline Personal Assistant (ONGOING)</li>
-            <li>API-Driven Web Applications</li>
+            <li>Fake Banking APK Detector (Security + AI)</li>
+            <li>Lookout AI Recruitment Platform</li>
+            <li>Offline Personal AI Assistant</li>
+            <li>AYUSH EMR System – SIH Hackathon</li>
           </ul>
         </div>
+
       </div>
     </div>
   </section>
-
   <section class="section skills" id="skills">
     <div class="section-inner">
       <p class="section-tag">Technical Capabilities</p>
@@ -1149,7 +1259,7 @@
         </div>
         <div class="skill-card">
           <h3>Tools & Platforms</h3>
-          <p>WordPress, Shopify, Git, Figma, VS Code</p>
+          <p>WordPress, Shopify, Git, Figma, VS Code, vercel</p>
         </div>
         <div class="skill-card">
           <h3>Soft Skills</h3>
@@ -1334,10 +1444,29 @@
           <h3 style="color: var(--accent); font-family: 'Montserrat', sans-serif;">Years of Learning</h3>
           <p>Strong foundation in programming, DSA, and system design</p>
         </div>
-        <div class="skill-card" style="text-align: center;">
-          <div style="font-size: 3rem; color: var(--accent); margin-bottom: 0.5rem; font-weight: 900;">10+</div>
-          <h3 style="color: var(--accent); font-family: 'Montserrat', sans-serif;">Projects Built</h3>
-          <p>Web, mobile, and desktop applications portfolio</p>
+        <div class="skill-card" style="text-align:center;">
+
+          <div style="
+    font-size:3rem;
+    color:var(--accent);
+    margin-bottom:0.5rem;
+    font-weight:900;
+  ">
+            10+
+          </div>
+
+          <h3 style="
+    color:var(--accent);
+    font-family:'Montserrat', sans-serif;
+    margin-bottom:6px;
+  ">
+            Projects Built
+          </h3>
+
+          <p style="opacity:0.85;">
+            Web platforms, AI systems, and software applications
+          </p>
+
         </div>
         <div class="skill-card" style="text-align: center;">
           <div style="font-size: 3rem; color: var(--accent); margin-bottom: 0.5rem; font-weight: 900;">2629</div>
@@ -1361,8 +1490,26 @@
       <a href="https://linkedin.com/in/satya-prem-3852033A9/" class="btn btn-secondary" target="_blank">LinkedIn</a>
       <a href="https://github.com/SATYA-PREM" class="btn btn-secondary" target="_blank">GitHub</a>
     </div>
-    <div class="footer-meta">
-      <p>Satya Prem | <a href="tel:+919931798085">+91-9931798085</a> | Jabalpur, Madhya Pradesh</p>
+    <div class="footer-meta"
+      style="display:flex; justify-content:center; align-items:center; text-align:center; gap:12px;">
+
+      <img src="logo.png" alt="logo" style="
+       width:40px;
+       height:40px;
+       border-radius:50%;
+       object-fit:cover;
+       object-position:center;
+       display:block;
+       ">
+
+      <p style="margin:0;">
+        Satya Prem |
+        <a href="tel:+919931798085" style="color:var(--accent); text-decoration:none;">
+          +91-9931798085
+        </a> |
+        Jabalpur, Madhya Pradesh
+      </p>
+
     </div>
   </section>
 
