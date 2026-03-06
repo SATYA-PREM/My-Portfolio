@@ -1196,7 +1196,7 @@
             <li><strong>Outcome:</strong> Reduced data processing time by 35%</li>
           </ul>
           <div class="project-links">
-            <a href="https://sih-25-namaste.vercel.app/" target="_blank"  class="btn btn-primary">View Project</a>
+            <a href="https://sih-25-namaste.vercel.app/" target="_blank" class="btn btn-primary">View Project</a>
             <a href="https://github.com/SATYA-PREM" class="btn btn-secondary">GitHub</a>
           </div>
         </div>
@@ -1211,14 +1211,22 @@ Focus: Android Malware Analysis, API Integration, Containerized Security Tools, 
 Impact: Provides a scalable and reproducible malware analysis environment capable of identifying fake banking applications and highlighting security risks through automated reports.-->
         <div class="project-card">
           <h3>Fake Banking APK Detector</h3>
-          <p class="project-desc">A security analysis platform that detects fraudulent or malicious Android banking applications by performing automated APK inspection. The system integrates VirusTotal’s multi-engine malware scanning with MobSF static mobile security analysis, evaluating permissions, digital certificates, code vulnerabilities, and behavioral indicators to identify potentially dangerous apps. The entire system is containerized using Docker for reproducible deployment and environment isolation.</p>
+          <p class="project-desc">A security analysis platform that detects fraudulent or malicious Android banking
+            applications by performing automated APK inspection. The system integrates VirusTotal’s multi-engine malware
+            scanning with MobSF static mobile security analysis, evaluating permissions, digital certificates, code
+            vulnerabilities, and behavioral indicators to identify potentially dangerous apps. The entire system is
+            containerized using Docker for reproducible deployment and environment isolation.</p>
           <ul class="project-meta">
-            <li><strong>Stack:</strong> Python (Flask), SQLite, VirusTotal API, MobSF, Docker, Bootstrap, JavaScript</li>
-            <li><strong>Focus:</strong> Android Malware Analysis, API Integration, Containerized Security Tools, Automated Risk Scoring</li>
-            <li><strong>Impact:</strong> Provides a scalable and reproducible malware analysis environment capable of identifying fake banking applications and highlighting security risks through automated reports.</li>
+            <li><strong>Stack:</strong> Python (Flask), SQLite, VirusTotal API, MobSF, Docker, Bootstrap, JavaScript
+            </li>
+            <li><strong>Focus:</strong> Android Malware Analysis, API Integration, Containerized Security Tools,
+              Automated Risk Scoring</li>
+            <li><strong>Impact:</strong> Provides a scalable and reproducible malware analysis environment capable of
+              identifying fake banking applications and highlighting security risks through automated reports.</li>
           </ul>
           <div class="project-links">
-            <a href="https://fake-banking-apk-detector.vercel.app/" target="_blank" class="btn btn-primary">View Projects</a>
+            <a href="https://fake-banking-apk-detector.vercel.app/" target="_blank" class="btn btn-primary">View
+              Projects</a>
             <a href="https://github.com/SATYA-PREM" class="btn btn-secondary">GitHub</a>
           </div>
         </div>
@@ -1233,11 +1241,16 @@ Focus: AI-Based Candidate Screening, Recruitment Workflow Automation, Scalable W
 Impact: Demonstrates implementation of intelligent recruitment tools that reduce hiring time and improve candidate discovery efficiency.-->
         <div class="project-card">
           <h3>Lookout AI – Recruitment Automation Platform</h3>
-          <p class="project-desc">A full-stack AI recruitment platform designed to streamline hiring workflows by automating candidate sourcing, resume analysis, and interview insights. The system integrates a scalable backend API with a modern frontend dashboard to centralize recruitment processes, enabling data-driven hiring decisions and faster candidate evaluation.</p>
+          <p class="project-desc">A full-stack AI recruitment platform designed to streamline hiring workflows by
+            automating candidate sourcing, resume analysis, and interview insights. The system integrates a scalable
+            backend API with a modern frontend dashboard to centralize recruitment processes, enabling data-driven
+            hiring decisions and faster candidate evaluation.</p>
           <ul class="project-meta">
             <li><strong>Stack:</strong> React, Tailwind CSS, Node.js, Express.js, MongoDB, JWT Authentication</li>
-            <li><strong>Focus:</strong> AI-Based Candidate Screening, Recruitment Workflow Automation, Scalable Web Architecture</li>
-            <li><strong>Impact:</strong> Demonstrates implementation of intelligent recruitment tools that reduce hiring time and improve candidate discovery efficiency.</li>
+            <li><strong>Focus:</strong> AI-Based Candidate Screening, Recruitment Workflow Automation, Scalable Web
+              Architecture</li>
+            <li><strong>Impact:</strong> Demonstrates implementation of intelligent recruitment tools that reduce hiring
+              time and improve candidate discovery efficiency.</li>
           </ul>
           <div class="project-links">
             <a href="https://lookout-ai-livid.vercel.app/" target="_blank" class="btn btn-primary">View Projects</a>
@@ -1282,12 +1295,8 @@ Impact: Demonstrates implementation of intelligent recruitment tools that reduce
       </p>
     </div>
     <div class="footer-links">
-<a href="https://mail.google.com/mail/?view=cm&to=satyaprem1714@gmail.com"
-   target="_blank"
-   rel="noopener"
-   class="btn btn-primary">
-Email Me
-</a>      <a href="https://linkedin.com/in/satya-prem-3852033A9/" class="btn btn-secondary" target="_blank">LinkedIn</a>
+      <a id="emailBtn" class="btn btn-primary">Email Me</a>
+      <a href="https://linkedin.com/in/satya-prem-3852033A9/" class="btn btn-secondary" target="_blank">LinkedIn</a>
       <a href="https://github.com/SATYA-PREM" class="btn btn-secondary" target="_blank">GitHub</a>
     </div>
     <div class="footer-meta">
@@ -1297,6 +1306,18 @@ Email Me
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script>
+    const emailBtn = document.getElementById("emailBtn");
+
+    function isMobileDevice() {
+      return /Android|iPhone|iPad|iPod|Mobile|Tablet/i.test(navigator.userAgent);
+    }
+
+    if (isMobileDevice()) {
+      emailBtn.href = "mailto:satyaprem1714@gmail.com";
+    } else {
+      emailBtn.href = "https://mail.google.com/mail/?view=cm&to=satyaprem1714@gmail.com";
+      emailBtn.target = "_blank";
+    }
     // MOBILE MENU TOGGLE
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
