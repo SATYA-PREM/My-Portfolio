@@ -7,6 +7,44 @@
   <title>Satya Prem — Portfolio</title>
   <meta name="description"
     content="Satya Prem — Software Engineer, Full-Stack Developer, DevOps & AI/ML. B.Tech CSE at SRIT Jabalpur." />
+    <meta property="og:description"
+  content="Explore the portfolio of Satya Prem, a Software Developer building scalable web applications and modern digital experiences using JavaScript, frontend technologies, and backend systems.">
+<meta name="keywords"
+  content="Satya Prem, Software Engineer, Full Stack Developer, Web Developer Portfolio, Frontend Developer, Backend Developer, dsa, Programming India">
+
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://www.satyapremonline.in">
+
+<!-- Open Graph (LinkedIn, Facebook, etc.) -->
+<meta property="og:title" content="Satya Prem | Full Stack Developer">
+<meta property="og:description"
+  content="Explore the portfolio of Satya Prem, a Full Stack Web Developer showcasing modern web development projects, technical skills, and interactive digital experiences.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.satyapremonline.in">
+<meta property="og:image" content="https://www.satyapremonline.in/preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+<!-- Twitter Preview -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Satya Prem | Software Engineer">
+<meta name="twitter:description"
+  content="Portfolio showcasing projects in Web Development, DevOps, and AI/ML built by Satya Prem.">
+<meta name="twitter:image" content="https://www.satyapremonline.in/preview.png">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/favicon.png">
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Person",
+ "name": "Satya Prem",
+ "url": "https://www.satyapremonline.in",
+ "jobTitle": "Full Stack Web Developer"
+}
+</script>
   <link
     href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
     rel="stylesheet" />
@@ -149,28 +187,33 @@
     }
 
     /* Mobile nav drawer */
+    /* Replace existing .mobile-nav rule */
     .mobile-nav {
       display: none;
       position: fixed;
-      top: 0;
+      top: 60px;
       left: 0;
       right: 0;
       bottom: 0;
-      background: #080a0c;
-      backdrop-filter: blur(20px);
+            background: linear-gradient(160deg, #080a0c 0%, #0a1628 50%, #080a0c 100%);
+
+      
+      /* solid — no transparency that bleeds through */
       z-index: 99;
       flex-direction: column;
       align-items: center;
-      gap: 1.5rem;
+      gap: 2rem;
     }
 
     .mobile-nav.open {
       display: flex;
     }
 
+    
+
     .mobile-nav a {
       font-family: 'Syne', sans-serif;
-      font-size: 1rem;
+      font-size: 1.5rem;
       font-weight: 700;
       color: var(--text);
       text-decoration: none;
@@ -2227,8 +2270,8 @@
             </svg>
             Projects
           </a>
-          
-          
+
+
         </div>
       </div>
 
@@ -2368,7 +2411,7 @@
 
       <div class="projects-grid">
 
-        
+
 
         <!-- CodeForCareer -->
         <div class="project-card reveal">
@@ -2404,7 +2447,7 @@
           </div>
         </div>
 
-        
+
 
         <!-- EHR -->
         <div class="project-card reveal">
@@ -2438,7 +2481,7 @@
             </a>
           </div>
         </div>
-<!-- Fake Bank APK -->
+        <!-- Fake Bank APK -->
         <div class="project-card reveal">
           <div class="project-icon">
             <svg viewBox="0 0 24 24">
@@ -2538,7 +2581,7 @@
             </a>
           </div>
         </div>
-<!-- Sampada -->
+        <!-- Sampada -->
         <div class="project-card reveal">
           <div class="project-icon">
             <svg viewBox="0 0 24 24">
