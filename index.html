@@ -7,36 +7,36 @@
   <title>Satya Prem — Portfolio</title>
   <meta name="description"
     content="Satya Prem — Software Engineer, Full-Stack Developer, DevOps & AI/ML. B.Tech CSE at SRIT Jabalpur." />
-    <meta property="og:description"
-  content="Explore the portfolio of Satya Prem, a Software Developer building scalable web applications and modern digital experiences using JavaScript, frontend technologies, and backend systems.">
-<meta name="keywords"
-  content="Satya Prem, Software Engineer, Full Stack Developer, Web Developer Portfolio, Frontend Developer, Backend Developer, dsa, Programming India">
+  <meta property="og:description"
+    content="Explore the portfolio of Satya Prem, a Software Developer building scalable web applications and modern digital experiences using JavaScript, frontend technologies, and backend systems.">
+  <meta name="keywords"
+    content="Satya Prem, Software Engineer, Full Stack Developer, Web Developer Portfolio, Frontend Developer, Backend Developer, dsa, Programming India">
 
-<meta name="robots" content="index, follow">
+  <meta name="robots" content="index, follow">
 
-<link rel="canonical" href="https://www.satyapremonline.in">
+  <link rel="canonical" href="https://www.satyapremonline.in">
 
-<!-- Open Graph (LinkedIn, Facebook, etc.) -->
-<meta property="og:title" content="Satya Prem | Full Stack Developer">
-<meta property="og:description"
-  content="Explore the portfolio of Satya Prem, a Full Stack Web Developer showcasing modern web development projects, technical skills, and interactive digital experiences.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.satyapremonline.in">
-<meta property="og:image" content="https://www.satyapremonline.in/preview.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="627">
+  <!-- Open Graph (LinkedIn, Facebook, etc.) -->
+  <meta property="og:title" content="Satya Prem | Full Stack Developer">
+  <meta property="og:description"
+    content="Explore the portfolio of Satya Prem, a Full Stack Web Developer showcasing modern web development projects, technical skills, and interactive digital experiences.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.satyapremonline.in">
+  <meta property="og:image" content="https://www.satyapremonline.in/preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="627">
 
-<!-- Twitter Preview -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Satya Prem | Software Engineer">
-<meta name="twitter:description"
-  content="Portfolio showcasing projects in Web Development, DevOps, and AI/ML built by Satya Prem.">
-<meta name="twitter:image" content="https://www.satyapremonline.in/preview.png">
+  <!-- Twitter Preview -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Satya Prem | Software Engineer">
+  <meta name="twitter:description"
+    content="Portfolio showcasing projects in Web Development, DevOps, and AI/ML built by Satya Prem.">
+  <meta name="twitter:image" content="https://www.satyapremonline.in/preview.png">
 
-<!-- Favicon -->
-<link rel="icon" type="image/png" href="/favicon.png">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon.png">
 
-<script type="application/ld+json">
+  <script type="application/ld+json">
 {
  "@context": "https://schema.org",
  "@type": "Person",
@@ -195,9 +195,9 @@
       left: 0;
       right: 0;
       bottom: 0;
-            background: linear-gradient(160deg, #080a0c 0%, #0a1628 50%, #080a0c 100%);
+      background: linear-gradient(160deg, #080a0c 0%, #0a1628 50%, #080a0c 100%);
 
-      
+
       /* solid — no transparency that bleeds through */
       z-index: 99;
       flex-direction: column;
@@ -209,7 +209,7 @@
       display: flex;
     }
 
-    
+
 
     .mobile-nav a {
       font-family: 'Syne', sans-serif;
@@ -2238,13 +2238,17 @@
           </a>
         </div>
         <div class="hero-ctas">
-          <a id="emailBtn" class="btn-primary">
+
+          <a href="#"
+            onclick="if(/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent)){this.href='mailto:satyaprem1714@gmail.com'}else{this.href='https://mail.google.com/mail/?view=cm&to=satyaprem619@gmail.com'}"
+            class="btn-primary">
+
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
               stroke-linecap="round" stroke-linejoin="round">
               <rect x="2" y="4" width="20" height="16" rx="2" />
               <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
             </svg>
-            Get in Touch
+            Let’s Connect
           </a>
           <a href="https://github.com/SATYA-PREM" target="_blank" class="btn-github">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -2255,11 +2259,11 @@
             </svg>
             View GitHub
           </a><a href="#skills" class="btn-github">
-            
+
             Technical Stack
           </a>
           <a href="#projects" class="btn-primary">
-            
+
             Projects
           </a>
 
@@ -2901,6 +2905,7 @@
     </div>
   </section>
 
+
   <!-- FOOTER -->
   <div class="footer-wrapper">
     <div class="footer-main">
@@ -3057,17 +3062,17 @@
     </div>
   </div>
 
-  <script>const emailBtn = document.getElementById("emailBtn");
+  <script>const emailBtns = document.getElementById("emailBtn");
 
     function isMobileDevice() {
       return /Android|iPhone|iPad|iPod|Mobile|Tablet/i.test(navigator.userAgent);
     }
 
     if (isMobileDevice()) {
-      emailBtn.href = "mailto:satyaprem1714@gmail.com";
+      emailBtns.href = "mailto:satyaprem1714@gmail.com";
     } else {
-      emailBtn.href = "https://mail.google.com/mail/?view=cm&to=satyaprem619@gmail.com  &su=Hello%20Satya!&body=I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20get%20in%20touch.";
-      emailBtn.target = "_blank";
+      emailBtns.href = "https://mail.google.com/mail/?view=cm&to=satyaprem619@gmail.com  &su=Hello%20Satya!&body=I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20get%20in%20touch.";
+      emailBtns.target = "_blank";
     }
     // MOBILE MENU TOGGLE
     const hamburger = document.getElementById('hamburger');
