@@ -50,17 +50,17 @@
     rel="stylesheet" />
   <style>
     :root {
-      --bg: #080a0c;
-      --bg2: #0c0f14;
-      --surface: #0f1520;
-      --border: rgba(99, 179, 255, 0.12);
-      --border-hover: rgba(99, 179, 255, 0.4);
-      --accent: #63b3ff;
-      --accent2: #a78bfa;
-      --accent3: #f472b6;
+      --bg: #071011;
+      --bg2: #0b1718;
+      --surface: #102122;
+      --border: rgba(94, 234, 212, 0.14);
+      --border-hover: rgba(94, 234, 212, 0.42);
+      --accent: #5eead4;
+      --accent2: #f6c177;
+      --accent3: #ff847c;
       --text: #e8f0f7;
-      --muted: #5a7a90;
-      --card: #0d1624;
+      --muted: #779796;
+      --card: #0d1c1d;
       --github-color: #7ee787;
     }
 
@@ -77,7 +77,10 @@
     }
 
     body {
-      background: var(--bg);
+      background:
+        radial-gradient(circle at 78% 16%, rgba(94, 234, 212, 0.08), transparent 28%),
+        radial-gradient(circle at 12% 72%, rgba(246, 193, 119, 0.055), transparent 24%),
+        var(--bg);
       color: var(--text);
       font-family: 'DM Sans', sans-serif;
       font-size: 16px;
@@ -102,8 +105,8 @@
       position: fixed;
       inset: 0;
       background-image:
-        linear-gradient(rgba(99, 179, 255, 0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(99, 179, 255, 0.025) 1px, transparent 1px);
+        linear-gradient(rgba(94, 234, 212, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(94, 234, 212, 0.035) 1px, transparent 1px);
       background-size: 60px 60px;
       pointer-events: none;
       z-index: 0;
@@ -238,6 +241,7 @@
       padding: 7rem 3rem 4rem;
       max-width: 1200px;
       margin: 0 auto;
+      width: 100%;
     }
 
     .hero-inner {
@@ -246,6 +250,22 @@
       gap: 4rem;
       align-items: center;
       width: 100%;
+      min-width: 0;
+    }
+
+    @media (min-width: 821px) {
+      #hero {
+        align-items: flex-start;
+        padding-top: 9rem;
+      }
+
+      .hero-inner {
+        align-items: flex-start;
+      }
+
+      .hero-left {
+        padding-top: 3.25rem;
+      }
     }
 
     .hero-badge {
@@ -430,6 +450,191 @@
       flex-direction: column;
       gap: 1.5rem;
       animation: fadeUp 0.7s 0.35s ease both;
+      min-width: 0;
+    }
+
+    .hero-visual {
+      min-height: 315px;
+      min-width: 0;
+      position: relative;
+      overflow: hidden;
+      padding: 1.35rem 1.5rem 1.15rem;
+      background:
+        linear-gradient(135deg, rgba(94, 234, 212, 0.1), transparent 48%),
+        var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.24);
+    }
+
+    .hero-visual::before,
+    .hero-visual::after {
+      content: '';
+      position: absolute;
+      border: 1px solid rgba(94, 234, 212, 0.12);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-visual::before {
+      width: 270px;
+      height: 270px;
+      right: -92px;
+      top: -106px;
+    }
+
+    .hero-visual::after {
+      width: 185px;
+      height: 185px;
+      right: -48px;
+      top: -62px;
+    }
+
+    .visual-top,
+    .visual-footer {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .visual-kicker,
+    .visual-live,
+    .visual-footer {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .visual-kicker,
+    .visual-footer {
+      color: var(--muted);
+    }
+
+    .visual-live {
+      color: var(--accent2);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .visual-live::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent2);
+      box-shadow: 0 0 0 4px rgba(246, 193, 119, 0.1);
+      animation: pulse 2.4s ease-in-out infinite;
+    }
+
+    .network {
+      height: 235px;
+      position: relative;
+      margin: 0.25rem auto 0;
+      max-width: 370px;
+      width: 100%;
+    }
+
+    .network-line {
+      position: absolute;
+      height: 1px;
+      transform-origin: left center;
+      background: linear-gradient(90deg, rgba(94, 234, 212, 0.62), rgba(94, 234, 212, 0.08));
+      opacity: 0.72;
+    }
+
+    .network-line.one { width: 116px; left: 47%; top: 48%; transform: rotate(-28deg); }
+    .network-line.two { width: 126px; left: 48%; top: 52%; transform: rotate(27deg); }
+    .network-line.three { width: 118px; left: 47%; top: 50%; transform: rotate(180deg); }
+    .network-line.four { width: 85px; left: 28%; top: 28%; transform: rotate(38deg); opacity: 0.38; }
+
+    .network-node {
+      position: absolute;
+      z-index: 1;
+      width: 74px;
+      height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.1rem;
+      border: 1px solid rgba(94, 234, 212, 0.35);
+      border-radius: 50%;
+      background: rgba(13, 28, 29, 0.9);
+      color: var(--text);
+      font-family: 'Space Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.05em;
+      animation: nodeFloat 5s ease-in-out infinite;
+    }
+
+    .network-node small {
+      color: var(--muted);
+      font-size: 0.48rem;
+      text-transform: uppercase;
+    }
+
+    .network-node.core {
+      width: 104px;
+      height: 104px;
+      left: calc(50% - 52px);
+      top: calc(50% - 52px);
+      border-color: var(--accent);
+      color: var(--accent);
+      box-shadow: 0 0 0 10px rgba(94, 234, 212, 0.045), 0 0 34px rgba(94, 234, 212, 0.13);
+      animation-delay: -1.2s;
+    }
+
+    .network-node.core strong { font-size: 1.25rem; }
+    .network-node.api { right: 8%; top: 12%; animation-delay: -2.5s; }
+    .network-node.data { right: 4%; bottom: 7%; animation-delay: -0.6s; }
+    .network-node.ai { left: 4%; top: 20%; animation-delay: -3.4s; }
+
+    .signal {
+      position: absolute;
+      z-index: 2;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent2);
+      box-shadow: 0 0 10px var(--accent2);
+      animation: signalMove 4.5s linear infinite;
+    }
+
+    .signal.one { left: 47%; top: 48%; }
+    .signal.two { left: 48%; top: 52%; animation-delay: -2.1s; }
+
+    .visual-footer {
+      border-top: 1px solid var(--border);
+      padding-top: 0.85rem;
+    }
+
+    .visual-footer strong { color: var(--text); font-weight: 400; }
+
+    @keyframes nodeFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-7px); }
+    }
+
+    @keyframes signalMove {
+      0% { transform: translate(0, 0); opacity: 0; }
+      15%, 75% { opacity: 1; }
+      100% { transform: translate(76px, -40px); opacity: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
     }
 
     .hero-card {
@@ -475,8 +680,9 @@
 
     .hero-stats {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 1rem;
+      min-width: 0;
     }
 
     .stat-box {
@@ -488,6 +694,8 @@
       cursor: pointer;
       text-decoration: none;
       display: block;
+      min-width: 0;
+      overflow: hidden;
       transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
     }
 
@@ -2318,9 +2526,8 @@
           <span class="outline">Prem</span>
         </h1>
         <p class="hero-tagline">
-          <strong>Software Engineer/ Full-Stack Developer/ DevOps/ AI/ML</strong>-B.Tech CSE at SRIT Jabalpur. Building
-          scalable web systems,
-          intelligent apps & modern cloud-ready software.
+          <strong>Software Developer | Software Engineering Student</strong> — B.Tech CSE at SRIT Jabalpur. Building
+          full-stack web systems, backend APIs, and intelligent applications.
         </p>
         <div class="contact-row">
           <a id="emailBtn" class="contact-chip ">
@@ -2361,7 +2568,7 @@
         <div class="hero-ctas">
 
           <a href="#"
-            onclick="if(/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent)){this.href='mailto:satyaprem1714@gmail.com'}else{this.href='https://mail.google.com/mail/?view=cm&to=satyaprem619@gmail.com'}"
+            onclick="if(/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent)){this.href='mailto:satyaprem619@gmail.com'}else{this.href='https://mail.google.com/mail/?view=cm&to=satyaprem619@gmail.com'}"
             class="btn-primary">
 
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
@@ -2393,11 +2600,33 @@
       </div>
 
       <div class="hero-right">
+        <div class="hero-visual" aria-label="Animated overview of Satya's software work">
+          <div class="visual-top">
+            <span class="visual-kicker">Selected systems / 2026</span>
+            <span class="visual-live">Live build</span>
+          </div>
+          <div class="network" aria-hidden="true">
+            <span class="network-line one"></span>
+            <span class="network-line two"></span>
+            <span class="network-line three"></span>
+            <span class="network-line four"></span>
+            <span class="signal one"></span>
+            <span class="signal two"></span>
+            <div class="network-node core"><strong>SP</strong><small>builder</small></div>
+            <div class="network-node api">API<small>services</small></div>
+            <div class="network-node data">DB<small>data</small></div>
+            <div class="network-node ai">AI<small>insight</small></div>
+          </div>
+          <div class="visual-footer">
+            <span>Web <strong>·</strong> Data <strong>·</strong> AI</span>
+            <span>Jabalpur / India</span>
+          </div>
+        </div>
         <div class="hero-card">
           <div class="card-label">Current Status</div>
           <div class="card-value">B.Tech CSE</div>
           <div class="card-sub">
-            Shri Ram Institute of Technology, Jabalpur &middot; Sep 2023 – Ongoing
+            Shri Ram Institute of Technology, Jabalpur &middot; 2023 – 2027
           </div>
         </div>
 
@@ -2433,7 +2662,7 @@
           </a>
 
           <a href="#experience" class="stat-box">
-            <div class="stat-num">3</div>
+            <div class="stat-num">4</div>
             <div class="stat-label">Internships</div>
           </a>
 
@@ -2501,6 +2730,7 @@
           <a href="#projects" class="skill-pill backend"><span class="skill-dot"></span>FastAPI</a>
           <a href="#projects" class="skill-pill backend"><span class="skill-dot"></span>REST APIs</a>
           <a href="#projects" class="skill-pill backend"><span class="skill-dot"></span>JWT Auth</a>
+          <a href="#projects" class="skill-pill backend"><span class="skill-dot"></span>OAuth 2.0</a>
         </div>
       </div>
 
@@ -2510,6 +2740,7 @@
         <div class="skills-grid">
           <a href="#projects" class="skill-pill aiml"><span class="skill-dot"></span>Pandas</a>
           <a href="#projects" class="skill-pill aiml"><span class="skill-dot"></span>NumPy</a>
+          <a href="#projects" class="skill-pill aiml"><span class="skill-dot"></span>Scikit-learn</a>
           <a href="#projects" class="skill-pill aiml"><span class="skill-dot"></span>OpenAI API</a>
         </div>
       </div>
@@ -2520,6 +2751,7 @@
           <a href="#projects" class="skill-pill devops"><span class="skill-dot"></span>GitHub Actions</a>
           <a href="#projects" class="skill-pill devops"><span class="skill-dot"></span>Docker</a>
           <a href="#projects" class="skill-pill devops"><span class="skill-dot"></span>Vercel</a>
+          <a href="#projects" class="skill-pill devops"><span class="skill-dot"></span>AWS Cloud Practitioner (Learning)</a>
         </div>
       </div>
 
@@ -2541,7 +2773,11 @@
           <a href="#projects" class="skill-pill cms"><span class="skill-dot"></span>Shopify</a>
           <a href="#projects" class="skill-pill cms"><span class="skill-dot"></span>Elementor</a>
           <a href="#projects" class="skill-pill cms"><span class="skill-dot"></span>WooCommerce</a>
-          <a href="#projects" class="skill-pill cms"><span class="skill-dot"></span>Vercel</a>
+          <a href="#projects" class="skill-pill cms"><span class="skill-dot"></span>Git</a>
+          <a href="#projects" class="skill-pill cms"><span class="skill-dot"></span>GitHub</a>
+          <a href="#projects" class="skill-pill cms"><span class="skill-dot"></span>VS Code</a>
+          <a href="#projects" class="skill-pill cms"><span class="skill-dot"></span>Figma</a>
+          <a href="#projects" class="skill-pill cms"><span class="skill-dot"></span>Canva</a>
 
         </div>
       </div>
@@ -2616,7 +2852,7 @@
           </div>
 
           <div class="project-stack">
-            React · Node.js · Express.js · MongoDB · JWT · REST API
+            React.js · Node.js · MySQL · JWT · REST API
           </div>
 
           <div class="proj-links">
@@ -2886,23 +3122,35 @@
         <h2 class="section-title">Work Experience</h2>
         <div class="section-line"></div>
       </div>
-
       <div class="exp-block reveal">
         <div class="exp-header">
           <div>
-            <div class="exp-company">Bireena Infotech </div>
-            <div class="exp-role">Full Stack Developer Intern &middot; Patna</div>
+            <div class="exp-company">Infosys Springboard</div>
+            <div class="exp-role">AI/ML Virtual Intern</div>
           </div>
-          <div class="exp-date">April 2026 – June 2026</div>
+          <div class="exp-date">August 2026 – Present</div>
         </div>
         <ul class="exp-list">
-          <li>Working on the development of BireenaMedico, a hospital and medical management system.</li>
-          <li>Developing full-stack modules for patient records, appointment management, billing, and authentication
-            with integrating backend APIs for real-time data management.</li>
+          <li>Working on an AI-Driven Product Assistant focused on customer feedback analysis, product planning, and requirements generation.</li>
         </ul>
         <div class="tech-tags">
-          <span class="tech-tag">HTML/CSS</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Tailwind
-            CSS</span><span class="tech-tag">React</span><span class="tech-tag">Node.js</span>
+          <span class="tech-tag">AI/ML</span><span class="tech-tag">Python</span><span class="tech-tag">Scikit-learn</span>
+        </div>
+      </div>
+      <div class="exp-block reveal">
+        <div class="exp-header">
+          <div>
+            <div class="exp-company">Bireena Infotech</div>
+            <div class="exp-role">Full Stack Developer Intern &middot; Patna</div>
+          </div>
+          <div class="exp-date">April 2026 – July 2026</div>
+        </div>
+        <ul class="exp-list">
+          <li>Worked at Bireena Infotech on Bireena Medico, a full-stack hospital management software system.</li>
+          <li>Built modules for patients, appointments, medical records, billing, and authentication with backend API integration.</li>
+        </ul>
+        <div class="tech-tags">
+          <span class="tech-tag">React.js</span><span class="tech-tag">Node.js</span><span class="tech-tag">MySQL</span><span class="tech-tag">REST APIs</span>
         </div>
       </div>
 
@@ -2912,13 +3160,11 @@
             <div class="exp-company">Yashi IT Services</div>
             <div class="exp-role">Web Development Intern &middot; Indore</div>
           </div>
-          <div class="exp-date">Jul 2025 – Aug 2025</div>
+          <div class="exp-date">August 2025 – September 2025</div>
         </div>
         <ul class="exp-list">
-          <li>Developed responsive and user-friendly web pages using HTML, CSS, JavaScript, and Tailwind CSS, improving
-            UI consistency and page performance across client projects.</li>
-          <li>Customized and maintained Shopify and WordPress websites, including theme editing, plugin integration, and
-            layout optimization for multiple client deliverables.</li>
+          <li>Developed responsive websites using HTML, CSS, JavaScript, and Tailwind CSS.</li>
+          <li>Customized Shopify and WordPress themes, plugins, and layouts for client deliverables.</li>
         </ul>
         <div class="tech-tags">
           <span class="tech-tag">HTML/CSS</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Tailwind
@@ -2932,19 +3178,19 @@
             <div class="exp-company">Cisco</div>
             <div class="exp-role">Cyber Security Intern &middot; Virtual Program</div>
           </div>
-          <div class="exp-date">Virtual Program</div>
+          <div class="exp-date">2024, 2025 &amp; 2026</div>
         </div>
         <ul class="exp-list">
-          <li>Completed virtual internship focusing on cybersecurity fundamentals, network security protocols, and
-            practical security implementations through Cisco's structured curriculum.</li>
-          <li>Gained hands-on experience with threat analysis, network defense strategies, and security tooling —
-            applied directly in the Fake Bank APK Detector project.</li>
+          <li>Completed Cisco virtual internships in cybersecurity, networking, and artificial intelligence.</li>
+          <li>Applied cybersecurity and threat-analysis concepts in the Fake Bank APK Detector project.</li>
         </ul>
         <div class="tech-tags">
           <span class="tech-tag">Network Security</span><span class="tech-tag">Cybersecurity</span><span
             class="tech-tag">Threat Analysis</span><span class="tech-tag">Cisco</span>
         </div>
       </div>
+
+      
     </div>
   </section>
 
@@ -2958,7 +3204,7 @@
       </div>
       <div class="edu-grid">
         <div class="edu-card reveal">
-          <div class="edu-year">SEP 2023 — ONGOING</div>
+          <div class="edu-year">2023 — 2027 · PURSUING</div>
           <div class="edu-degree">B.Tech in Computer Science &amp; Engineering</div>
           <div class="edu-school">Shri Ram Institute of Technology, Jabalpur</div>
 
@@ -2975,12 +3221,14 @@
           <div class="edu-year">2023</div>
           <div class="edu-degree">Senior Secondary Certificate (XII)</div>
           <div class="edu-school">Kendriya Vidyalaya No. 2 GCF, Jabalpur</div>
+          <div class="edu-note"><strong>75.4%</strong></div>
           <div class="edu-note">Mathematics · Science · Computer Science</div>
         </div>
         <div class="edu-card reveal">
           <div class="edu-year">2021</div>
           <div class="edu-degree">Secondary Certificate (X)</div>
           <div class="edu-school">St. Gabriel's Sr. Sec. School, Jabalpur</div>
+          <div class="edu-note"><strong>92%</strong></div>
           <div class="edu-note">Mathematics · Science · Information Technology</div>
         </div>
       </div>
@@ -3003,8 +3251,8 @@
         </div>
         <div class="achievement-card reveal">
           <div class="ach-num">AWS</div>
-          <div class="ach-label">Certified</div>
-          <div class="ach-sub">Cloud Foundations</div>
+          <div class="ach-label">Learning</div>
+          <div class="ach-sub">Cloud Practitioner Foundations</div>
         </div>
         <div class="achievement-card reveal">
           <div class="ach-num">2629</div>
@@ -3012,23 +3260,18 @@
           <div class="ach-sub">TCS CodeVita Season 13</div>
         </div>
         <div class="achievement-card reveal">
-          <div class="ach-num">7629</div>
-          <div class="ach-label">Global Rank</div>
-          <div class="ach-sub">TCS CodeVita Season 12</div>
-        </div>
-        <div class="achievement-card reveal">
           <div class="ach-num">10+</div>
           <div class="ach-label">Projects Built</div>
           <div class="ach-sub">Web · AI · Security</div>
         </div>
         <div class="achievement-card reveal">
-          <div class="ach-num">3</div>
+          <div class="ach-num">4</div>
           <div class="ach-label">Internships</div>
-          <div class="ach-sub">Web Dev &amp; Cyber Security</div>
+          <div class="ach-sub">Web Dev, AI/ML &amp; Cyber Security</div>
         </div>
         <div class="achievement-card reveal">
-          <div class="ach-num">5+</div>
-          <div class="ach-label">Client Websites</div>
+          <div class="ach-num">3+</div>
+          <div class="ach-label">Professional Websites</div>
           <div class="ach-sub">Delivered &amp; Live in Production</div>
         </div>
       </div>
@@ -3145,7 +3388,7 @@
               <circle cx="4" cy="4" r="2" />
             </svg>
           </a>
-          <a id="emailBtn" class="footer-social-btn" title="Email">
+          <a href="mailto:satyaprem619@gmail.com" class="footer-social-btn" title="Email">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
               stroke-linejoin="round">
               <rect x="2" y="4" width="20" height="16" rx="2" />
@@ -3194,7 +3437,7 @@
             <rect x="2" y="4" width="20" height="16" rx="2" />
             <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
           </svg>
-          <a href="mailto:satyaprem1714@gmail.com">satyaprem1714@gmail.com</a>
+          <a href="mailto:satyaprem619@gmail.com">satyaprem619@gmail.com</a>
         </div>
         <div class="footer-contact-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -3283,27 +3526,11 @@
     }
 
     if (isMobileDevice()) {
-      emailBtns.href = "mailto:satyaprem1714@gmail.com";
+      emailBtns.href = "mailto:satyaprem619@gmail.com";
     } else {
       emailBtns.href = "https://mail.google.com/mail/?view=cm&to=satyaprem619@gmail.com  &su=Hello%20Satya!&body=I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20get%20in%20touch.";
       emailBtns.target = "_blank";
     }
-    // MOBILE MENU TOGGLE
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
-
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      mobileMenu.classList.toggle('active');
-    });
-
-    document.querySelectorAll('.mobile-menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        mobileMenu.classList.remove('active');
-      });
-    });
-
     // ── CURSOR GLOW ──
     const glow = document.getElementById('cursorGlow');
     document.addEventListener('mousemove', e => {
@@ -3356,13 +3583,13 @@
         "Satya's tech stack spans:\n• Languages: Python, JavaScript, C++, Java, SQL\n• Frontend: React, Next.js, Tailwind, HTML/CSS\n• Backend: Node.js, Flask, FastAPI, Express\n• AI/ML: TensorFlow, PyTorch, Scikit-learn\n• DevOps: Docker, Git, GitHub Actions, Linux, Vercel\n• Databases: MongoDB, MySQL, PostgreSQL\n• CMS: WordPress, Shopify, WooCommerce"
       ],
       contact: [
-        "You can reach Satya at:\n• Email: satyaprem1714@gmail.com\n• Phone: +91-9931798085\n• GitHub: github.com/SATYA-PREM\n• LinkedIn: linkedin.com/in/satya-prem-3852033A9\n• Location: Jabalpur, MP, India"
+        "You can reach Satya at:\n• Email: satyaprem619@gmail.com\n• Phone: +91-9931798085\n• GitHub: github.com/SATYA-PREM\n• LinkedIn: linkedin.com/in/satya-prem-3852033A9\n• Location: Jabalpur, MP, India"
       ],
       experience: [
-        "Satya has 3 internships:\n1. Sampada Herbs & Spices — Web Developer (Nov 2025 – Jan 2026)\n2. Yashi IT Services — Web Dev Intern, Indore (Jul–Aug 2025)\n3. Cisco — Cyber Security Intern (Virtual)"
+        "Satya has experience through internships at Bireena Infotech, Yashi IT Services, Cisco, and Infosys Springboard, spanning full-stack development, web development, cybersecurity, networking, artificial intelligence, and AI/ML."
       ],
       achievements: [
-        "Key achievements:\n• Rank 2629 globally — TCS CodeVita Season 13\n• Rank 7629 globally — TCS CodeVita Season 12\n• 10+ projects built across Web, AI & Security\n• 5+ professional websites delivered for real clients"
+        "Key achievements:\n• Qualified GATE 2026\n• Rank 2629 globally — TCS CodeVita Season 13\n• AWS Academy Graduate in Cloud, ML & NLP Foundations\n• 3+ professional websites delivered"
       ],
       education: [
         "Satya is pursuing B.Tech in Computer Science & Engineering at Shri Ram Institute of Technology, Jabalpur (Sep 2023 – Ongoing). He completed Class XII from Kendriya Vidyalaya No.2 GCF, Jabalpur and Class X from St. Gabriel's Sr. Sec. School, Jabalpur."
