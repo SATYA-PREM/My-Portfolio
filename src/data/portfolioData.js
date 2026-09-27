@@ -141,64 +141,54 @@ export const experienceData = [
 
 export const projectsData = [
   {
+    id: "codeforcareer",
+    title: "CodeForCareer",
+    subtitle: "Full-Stack Placement & Coding Platform",
+    description: "Developed a full-stack placement and career acceleration platform with coding practice, structured learning paths, quizzes, project-based labs, mock interviews, and skill assessments to support end-to-end placement preparation. Implemented AI-powered ATS resume analysis using Gemini API, multi-language code execution, and secure JWT authentication with protected routes, enabling personalized resume feedback and an integrated coding practice experience.",
+    featured: true,
+    tags: ["React.js", "Node.js", "Express.js", "MongoDB", "Gemini API", "Tailwind CSS", "JWT", "Google OAuth"],
+    liveUrl: "https://codeforcareer.vercel.app/",
+    githubUrl: "https://github.com/SATYA-PREM/Code4career"
+  },
+  {
     id: "product-intelligence",
     title: "Product Intelligence Platform",
     subtitle: "AI-Powered Product Analytics",
-    description: "Real-time analytics engine empowering product teams to track user events, generate cohort insights, and leverage generative AI for automated metric reporting.",
+    description: "Building an AI-powered product intelligence platform with an end-to-end data pipeline for ingestion, validation, cleaning, preprocessing, AI analysis, embeddings, clustering, trend analysis, and feature prioritization. Implemented RAG-based retrieval and Gemini-powered AI agents to transform analyzed customer feedback into product insights, prioritized features, PRDs, user stories, roadmap recommendations, and reports.",
     featured: true,
-    tags: ["React", "Node.js", "Express", "MongoDB", "AI Analytics"],
-    liveUrl: "https://net-sage-ai-rho.vercel.app/assistant",
+    tags: ["React.js", "Vite", "Python", "FastAPI", "MongoDB", "Gemini API", "RAG", "AI Agents", "JWT"],
+    liveUrl: "https://ai-driven-product.vercel.app/",
     githubUrl: "https://github.com/SATYA-PREM/Product-Intelligence-Platform-AI-Powered-Product-Analytics-"
+  },
+  {
+    id: "learnwise-ai",
+    title: "LearnWise AI",
+    subtitle: "GenAI-Powered Adaptive Learning & Career Mentor",
+    description: "Developed a GenAI-powered adaptive learning platform that generates personalized learning paths, diagnostic assessments, remedial plans, career simulations, and AI-powered resume analysis. Implemented Gemini-powered AI services for backward-designed roadmaps, learning diagnostics, career simulations, resume parsing, and context-aware AI mentoring with secure JWT authentication and REST APIs.",
+    featured: true,
+    tags: ["React.js", "Vite", "Tailwind CSS", "Node.js", "Express.js", "MongoDB Atlas", "Gemini API", "Mongoose", "JWT"],
+    liveUrl: "https://ai-path-recomender-satya.vercel.app/",
+    githubUrl: "https://github.com/SATYA-PREM/AI-PATH-RECOMENDER-PUBLIC"
+  },
+  {
+    id: "bireena-medico",
+    title: "Bireena Medico",
+    subtitle: "Hospital Management System",
+    description: "Developing a multi-role hospital management system covering patient management, appointments, EMR, prescriptions, laboratory, pharmacy, billing, inventory, reports, and analytics. Implementing secure REST APIs with JWT authentication and role-based access control, along with responsive dashboards and real-time workflows for administrators, doctors, clinics, pharmacy, laboratory, and appointment operations.",
+    featured: false,
+    tags: ["React.js", "JavaScript", "Node.js", "Express.js", "MongoDB", "Supabase", "JWT", "REST APIs"],
+    liveUrl: "https://hospital-management-system-five-khaki.vercel.app/",
+    githubUrl: "https://github.com/SATYA-PREM/BIREENA-MEDICO/"
   },
   {
     id: "netsage-ai",
     title: "NetSage AI",
     subtitle: "Network Troubleshooting & AI Assistant",
-    description: "Smart network diagnostics tool and interactive AI assistant for diagnosing connectivity, monitoring latency, and receiving automated network repair steps.",
-    featured: true,
-    tags: ["React", "Flask", "Python", "OpenAI / Gemini", "Vercel"],
+    description: "Smart network diagnostics application and interactive AI assistant for diagnosing network connectivity, monitoring latency, analyzing packet data, and delivering automated network repair steps.",
+    featured: false,
+    tags: ["React.js", "Flask", "Python", "OpenAI / Gemini", "Vercel"],
     liveUrl: "https://net-sage-ai-rho.vercel.app/assistant",
     githubUrl: "https://github.com/SATYA-PREM/NetSage-AI"
-  },
-  {
-    id: "ai-path-recommender",
-    title: "AI Path Recommender",
-    subtitle: "Adaptive Career & Skill Roadmap Generator",
-    description: "Intelligent career path navigation tool analyzing current skills to chart optimized learning milestones, course suggestions, and target milestones.",
-    featured: true,
-    tags: ["React", "FastAPI", "Tailwind CSS", "Gemini API"],
-    liveUrl: "https://ai-path-recomender-satya.vercel.app/",
-    githubUrl: "https://github.com/SATYA-PREM/AI-PATH-RECOMENDER-PUBLIC"
-  },
-  {
-    id: "codeforcareer",
-    title: "CodeForCareer",
-    subtitle: "Placement & Coding Prep Platform",
-    description: "Full-stack learning & assessment platform with subject modules, practice code problems, mock tests, and progress tracking for CSE candidates.",
-    featured: false,
-    tags: ["React", "Node.js", "Express", "MongoDB"],
-    liveUrl: "https://satya-prem.vercel.app/",
-    githubUrl: "https://github.com/SATYA-PREM"
-  },
-  {
-    id: "bireena-medico",
-    title: "Bireena Medico",
-    subtitle: "Hospital & Pharmacy Management System",
-    description: "Comprehensive medical ERP streamlining patient records, doctor scheduling, pharmacy inventory, and digital prescription generation.",
-    featured: false,
-    tags: ["React", "Node.js", "MySQL", "Express"],
-    liveUrl: "https://satya-prem.vercel.app/",
-    githubUrl: "https://github.com/SATYA-PREM"
-  },
-  {
-    id: "learnwise-ai",
-    title: "LearnWise AI",
-    subtitle: "GenAI Adaptive Learning & Career Mentor",
-    description: "AI-driven education platform delivering personalized study schedules, dynamic quizzes, and instant query resolution using GenAI models.",
-    featured: false,
-    tags: ["Python", "FastAPI", "React", "Google Gemini API"],
-    liveUrl: "https://satya-prem.vercel.app/",
-    githubUrl: "https://github.com/SATYA-PREM"
   }
 ];
 
