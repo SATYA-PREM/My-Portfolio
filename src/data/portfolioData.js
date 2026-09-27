@@ -105,10 +105,10 @@ export const experienceData = [
     type: "Virtual Internship",
     description: "Working on an AI-driven Product Intelligence platform focused on customer feedback analysis, product planning, feature prioritization, and requirements generation.",
     highlights: [
-      "Building end-to-end AI pipelines for customer feedback ingestion, sentiment analysis, and topic clustering.",
-      "Implementing RAG-based LLM retrieval to generate product requirements, feature priority lists, and PRDs."
+      "Building end-to-end AI data pipelines for customer feedback ingestion, sentiment analysis, and topic clustering.",
+      "Developing core backend services using Java, Spring Boot, REST APIs, alongside Python FastAPI for LLM RAG pipelines."
     ],
-    tech: ["AI/ML", "Python", "LLM", "RAG", "Product Analytics"]
+    tech: ["Java", "Spring Boot", "Python", "FastAPI", "LLM", "RAG", "Product Analytics"]
   },
   {
     role: "Full Stack Developer Intern",
@@ -117,10 +117,10 @@ export const experienceData = [
     type: "Internship",
     description: "Developed a full-stack hospital management system covering patient records, appointment management, billing, authentication, and REST APIs for clinical and administrative workflows.",
     highlights: [
-      "Engineered multi-role authentication and authorization (Admin, Doctor, Pharmacist) using JWT and Node.js.",
-      "Designed relational database models in MySQL and developed responsive React dashboards for clinical operations."
+      "Engineered secure multi-role authentication & authorization (Admin, Doctor, Pharmacist) using Spring Security, JWT, and Node.js.",
+      "Designed relational database models in PostgreSQL / MySQL and developed RESTful microservices for clinical operations."
     ],
-    tech: ["React.js", "Node.js", "Express.js", "MySQL", "REST APIs", "JWT"]
+    tech: ["Java", "Spring Boot", "REST APIs", "PostgreSQL", "MySQL", "React.js", "JWT"]
   },
   {
     role: "Web Development Intern",
@@ -153,9 +153,9 @@ export const projectsData = [
     id: "codeforcareer",
     title: "CodeForCareer",
     subtitle: "Full-Stack Placement & Coding Platform",
-    description: "Developed a full-stack placement and career acceleration platform with coding practice, structured learning paths, quizzes, project-based labs, mock interviews, and skill assessments to support end-to-end placement preparation. Implemented AI-powered ATS resume analysis using Gemini API, multi-language code execution, and secure JWT authentication with protected routes.",
+    description: "Developed a full-stack placement and career acceleration platform with coding practice, structured learning paths, quizzes, project-based labs, mock interviews, and skill assessments to support end-to-end placement preparation. Built backend services with Java, Spring Boot, Node.js, and REST APIs with AI-powered ATS resume analysis using Gemini API.",
     featured: true,
-    tags: ["React.js", "Node.js", "Express.js", "MongoDB", "Gemini API", "Piston API", "JWT"],
+    tags: ["Java", "Spring Boot", "REST APIs", "React.js", "Node.js", "MongoDB", "Gemini API", "JWT"],
     liveUrl: "https://codeforcareer.vercel.app/",
     githubUrl: "https://github.com/SATYA-PREM/Code4career"
   },
@@ -163,9 +163,9 @@ export const projectsData = [
     id: "product-intelligence",
     title: "Product Intelligence Platform",
     subtitle: "AI-Powered Product Analytics",
-    description: "Building an AI-powered product intelligence platform with an end-to-end data pipeline for ingestion, validation, cleaning, preprocessing, AI analysis, embeddings, clustering, trend analysis, and feature prioritization. Implemented RAG-based retrieval and Gemini-powered AI agents to transform analyzed customer feedback into product insights, prioritized features, PRDs, user stories, roadmap recommendations, and reports.",
+    description: "Building an AI-powered product intelligence platform with an end-to-end data pipeline for ingestion, validation, cleaning, preprocessing, AI analysis, embeddings, clustering, trend analysis, and feature prioritization. Implemented RAG-based retrieval with Java & Spring Boot backend services and Gemini-powered FastAPI agents.",
     featured: true,
-    tags: ["AI/ML", "RAG", "Product Analytics", "Python", "FastAPI", "React"],
+    tags: ["Java", "Spring Boot", "REST APIs", "Python", "FastAPI", "RAG", "PostgreSQL", "Gemini API"],
     liveUrl: "https://ai-driven-product.vercel.app/",
     githubUrl: "https://github.com/SATYA-PREM/Product-Intelligence-Platform-AI-Powered-Product-Analytics-"
   },
@@ -173,9 +173,9 @@ export const projectsData = [
     id: "learnwise-ai",
     title: "LearnWise AI",
     subtitle: "GenAI-Powered Adaptive Learning & Career Mentor",
-    description: "Developed a GenAI-powered adaptive learning platform that generates personalized learning paths, diagnostic assessments, remedial plans, career simulations, and AI-powered resume analysis. Implemented Gemini-powered AI services for backward-designed roadmaps, learning diagnostics, career simulations, resume parsing, and context-aware AI mentoring with secure JWT authentication and REST APIs.",
+    description: "Developed a GenAI-powered adaptive learning platform that generates personalized learning paths, diagnostic assessments, remedial plans, career simulations, and AI-powered resume analysis. Implemented Java Spring Boot REST APIs and Gemini-powered FastAPI AI services for roadmaps, diagnostics, and context-aware AI mentoring.",
     featured: true,
-    tags: ["React.js", "Node.js", "Express.js", "MongoDB", "Gemini API", "FastAPI", "Python"],
+    tags: ["Java", "Spring Boot", "REST APIs", "Python", "FastAPI", "React.js", "Gemini API", "JWT"],
     liveUrl: "https://ai-path-recomender-satya.vercel.app/",
     githubUrl: "https://github.com/SATYA-PREM/AI-PATH-RECOMENDER-PUBLIC"
   },
@@ -185,7 +185,7 @@ export const projectsData = [
     subtitle: "Smart Network Diagnostics & AI Assistant",
     description: "Smart network diagnostics application and interactive AI assistant for diagnosing network connectivity, monitoring latency, analyzing packet data, and delivering automated network repair steps.",
     featured: false,
-    tags: ["React.js", "Flask", "Python", "OpenAI / Gemini", "Vercel"],
+    tags: ["Python", "FastAPI", "React.js", "Flask", "OpenAI / Gemini", "Vercel"],
     liveUrl: "https://net-sage-ai-rho.vercel.app/assistant",
     githubUrl: "https://github.com/SATYA-PREM/NetSage-AI"
   },
@@ -193,9 +193,9 @@ export const projectsData = [
     id: "bireena-medico",
     title: "Bireena Medico",
     subtitle: "Hospital Management System",
-    description: "Developing a multi-role hospital management system covering patient management, appointments, EMR, prescriptions, laboratory, pharmacy, billing, inventory, reports, and analytics. Implementing secure REST APIs with JWT authentication and role-based access control, along with responsive dashboards and real-time workflows for administrators, doctors, clinics, pharmacy, laboratory, and appointment operations.",
+    description: "Developing a multi-role hospital management system covering patient management, appointments, EMR, prescriptions, laboratory, pharmacy, billing, inventory, reports, and analytics. Implementing secure Java Spring Boot REST APIs with JWT authentication and role-based access control, along with responsive React dashboards.",
     featured: false,
-    tags: ["React.js", "JavaScript", "Node.js", "Express.js", "MongoDB", "Supabase", "JWT"],
+    tags: ["Java", "Spring Boot", "REST APIs", "PostgreSQL", "React.js", "Node.js", "Supabase", "JWT"],
     liveUrl: "https://hospital-management-system-five-khaki.vercel.app/",
     githubUrl: "https://github.com/SATYA-PREM/BIREENA-MEDICO/"
   },
@@ -205,7 +205,7 @@ export const projectsData = [
     subtitle: "E-Commerce Storefront & Management System",
     description: "Full-featured e-commerce web platform built for high-quality spices, organic products, and herbal solutions with dynamic product catalogs, search, cart management, and seamless online shopping experience.",
     featured: false,
-    tags: ["React.js", "Node.js", "Express.js", "MongoDB", "E-Commerce"],
+    tags: ["React.js", "Node.js", "Express.js", "MongoDB", "REST APIs", "E-Commerce"],
     liveUrl: "https://sampadastore.shop/",
     githubUrl: "https://github.com/SATYA-PREM"
   },
