@@ -63,8 +63,8 @@ export const skillsCategories = [
     icon: "terminal",
     skills: [
       "Data Structures & Algorithms",
-      "Object-Oriented Programming (OOP)",
-      "Database Management Systems (DBMS)",
+      "OOP",
+      "DBMS",
       "Operating Systems (OS)",
       "Computer Networks (CN)",
       "Software Engineering"
@@ -273,7 +273,7 @@ export const chatKnowledge = {
     "Satya's key projects include:\n• CodeForCareer — Full-Stack Placement & Coding Platform\n• Product Intelligence Platform — AI-Powered Product Analytics\n• LearnWise AI — GenAI Adaptive Learning & Career Mentor\n• NetSage AI — Smart Network Diagnostics & Assistant\n• Bireena Medico — Hospital Management System\n• Sampada Herbs & Spices — E-Commerce Storefront\n• Smart Solar Solutions — Clean Energy Analytics Portal\n• Offline AI Assistant — Local Intelligence Assistant"
   ],
   skills: [
-    "Satya's technical skills:\n• Programming Languages: C++, C, Java, Python, JavaScript, TypeScript, SQL\n• Core CS: Data Structures & Algorithms, Object-Oriented Programming (OOP), Database Management Systems (DBMS), Operating Systems (OS), Computer Networks (CN), Software Engineering\n• Backend Development: Node.js, Express.js, FastAPI, Flask, REST APIs, JWT, RAG, Spring Boot (Learning)\n• Frontend Development: React.js, HTML5, CSS3, Tailwind CSS, Next.js\n• Databases: MongoDB, MongoDB Atlas, MySQL, Supabase\n• AI/ML & Generative AI: Gemini API, RAG, Embeddings, AI Agents, Scikit-learn, NumPy, Pandas\n• Cloud & DevOps: AWS EC2, S3, IAM, Docker, GitHub Actions, Vercel, Render"
+    "Satya's technical skills:\n• Programming Languages: C++, C, Java, Python, JavaScript, TypeScript, SQL\n• Core CS: Data Structures & Algorithms, OOP, DBMS, Operating Systems (OS), Computer Networks (CN), Software Engineering\n• Backend Development: Node.js, Express.js, FastAPI, Flask, REST APIs, JWT, RAG, Spring Boot (Learning)\n• Frontend Development: React.js, HTML5, CSS3, Tailwind CSS, Next.js\n• Databases: MongoDB, MongoDB Atlas, MySQL, Supabase\n• AI/ML & Generative AI: Gemini API, RAG, Embeddings, AI Agents, Scikit-learn, NumPy, Pandas\n• Cloud & DevOps: AWS EC2, S3, IAM, Docker, GitHub Actions, Vercel, Render"
   ],
   contact: [
     "You can reach Satya directly via:\n• Email: satyaprem619@gmail.com\n• LinkedIn: linkedin.com/in/satya-prem-3852033a9/\n• GitHub: github.com/SATYA-PREM\n• Location: Jabalpur, MP, India"
