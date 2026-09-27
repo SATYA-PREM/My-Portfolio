@@ -1,5 +1,5 @@
 import React from 'react';
-import { personalData, heroStats, heroNodes } from '../data/portfolioData';
+import { personalData, heroStats } from '../data/portfolioData';
 
 export default function Hero({ onEmailClick }) {
   return (
@@ -107,30 +107,62 @@ export default function Hero({ onEmailClick }) {
         </div>
 
         <div className="hero-right">
+          {/* Tech Architecture Card matching reference design */}
           <div className="hero-visual">
             <div className="visual-top">
-              <span className="visual-kicker">Tech Architecture</span>
-              <span className="visual-live">Live Ecosystem</span>
+              <span className="visual-kicker">SELECTED SYSTEMS / 2026</span>
+              <span className="visual-live">
+                <span className="live-dot" /> LIVE BUILD
+              </span>
             </div>
 
             <div className="network-stage">
-              <svg className="network-svg">
-                <line x1="18%" y1="28%" x2="50%" y2="50%" className="network-line" />
-                <line x1="82%" y1="32%" x2="50%" y2="50%" className="network-line" />
-                <line x1="22%" y1="75%" x2="50%" y2="50%" className="network-line" />
-                <line x1="78%" y1="72%" x2="50%" y2="50%" className="network-line" />
+              {/* Radar Rings & Connections */}
+              <svg className="network-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+                {/* Background Radar Rings */}
+                <circle cx="68" cy="50" r="18" className="radar-ring r1" />
+                <circle cx="68" cy="50" r="32" className="radar-ring r2" />
+                <circle cx="68" cy="50" r="46" className="radar-ring r3" />
+
+                {/* Connecting Laser Lines */}
+                <line x1="42" y1="50" x2="23" y2="44" className="network-line" />
+                <line x1="42" y1="50" x2="68" y2="28" className="network-line" />
+                <line x1="42" y1="50" x2="68" y2="72" className="network-line" />
               </svg>
 
-              {heroNodes.map((node, i) => (
-                <div
-                  key={i}
-                  className={`network-node ${node.isCore ? 'core' : ''}`}
-                  style={node.style}
-                >
-                  <span>{node.label}</span>
-                  {node.subLabel && <small>{node.subLabel}</small>}
+              {/* Satellite Node 1: Left (AI INSIGHT) */}
+              <div className="sat-node sat-left">
+                <span className="node-title">AI</span>
+                <span className="node-sub">INSIGHT</span>
+              </div>
+
+              {/* Center Core Node: SP BUILDER with Orbiting Particle */}
+              <div className="core-node-wrapper">
+                <div className="orbit-ring">
+                  <span className="orbit-particle" />
                 </div>
-              ))}
+                <div className="core-node-inner">
+                  <span className="core-sp">SP</span>
+                  <span className="core-role">BUILDER</span>
+                </div>
+              </div>
+
+              {/* Satellite Node 2: Top Right (API SERVICES) */}
+              <div className="sat-node sat-top-right">
+                <span className="node-title">API</span>
+                <span className="node-sub">SERVICES</span>
+              </div>
+
+              {/* Satellite Node 3: Bottom Right (DB DATA) */}
+              <div className="sat-node sat-bottom-right">
+                <span className="node-title">DB</span>
+                <span className="node-sub">DATA</span>
+              </div>
+            </div>
+
+            <div className="visual-bottom">
+              <span className="bot-left">Web · Data · AI</span>
+              <span className="bot-right">Jabalpur / India</span>
             </div>
           </div>
 
@@ -147,4 +179,3 @@ export default function Hero({ onEmailClick }) {
     </section>
   );
 }
-

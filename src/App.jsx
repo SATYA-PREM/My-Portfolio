@@ -11,6 +11,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ChatBot from './components/ChatBot';
 import CursorGlow from './components/CursorGlow';
+import BackgroundCanvas from './components/BackgroundCanvas';
 import ScrollTop from './components/ScrollTop';
 import { personalData } from './data/portfolioData';
 
@@ -104,6 +105,27 @@ export default function App() {
     };
   }, [themeWindowOpen]);
 
+  // Scroll Reveal Intersection Observer
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+    );
+
+    const elements = document.querySelectorAll(
+      'section, .skill-card, .exp-card, .project-card, .achieve-card, .contact-card, .hero-card'
+    );
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   // Handle email click (Gmail web compose on desktop, native mail app on mobile)
   const handleEmailClick = (e) => {
     if (e) e.preventDefault();
@@ -136,6 +158,7 @@ export default function App() {
 
   return (
     <div className="portfolio-app">
+      <BackgroundCanvas />
       <CursorGlow />
 
       <MobileNav
