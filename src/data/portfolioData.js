@@ -99,55 +99,52 @@ export const skillsCategories = [
 
 export const experienceData = [
   {
-    role: "Backend & Full-Stack Developer",
-    company: "CodeForCareer",
-    period: "2025 – Present",
-    type: "Internship / Technical Project",
-    description: "Built scalable placement & coding preparation platform powering mock assessments, analytics dashboards, and practice environments.",
+    role: "AI/ML Virtual Intern",
+    company: "Infosys Springboard",
+    period: "Aug 2026 – Present",
+    type: "Virtual Internship",
+    description: "Working on an AI-driven Product Intelligence platform focused on customer feedback analysis, product planning, feature prioritization, and requirements generation.",
     highlights: [
-      "Designed and implemented RESTful API endpoints using Node.js, Express, and MongoDB.",
-      "Integrated authentication with JWT and secure password hashing with Bcrypt.",
-      "Engineered real-time dashboard analytics tracking student performance metrics."
+      "Building end-to-end AI pipelines for customer feedback ingestion, sentiment analysis, and topic clustering.",
+      "Implementing RAG-based LLM retrieval to generate product requirements, feature priority lists, and PRDs."
     ],
-    tech: ["Node.js", "Express", "React", "MongoDB", "Tailwind CSS"]
+    tech: ["AI/ML", "Python", "LLM", "RAG", "Product Analytics"]
   },
   {
-    role: "AI & Full-Stack Developer Intern",
-    company: "LearnWise AI",
-    period: "2024",
+    role: "Full Stack Developer Intern",
+    company: "Bireena Infotech",
+    period: "Apr 2026 – Jul 2026",
     type: "Internship",
-    description: "Developed adaptive AI learning assistant & career mentoring system using Google Gemini API and FastAPI.",
+    description: "Developed a full-stack hospital management system covering patient records, appointment management, billing, authentication, and REST APIs for clinical and administrative workflows.",
     highlights: [
-      "Engineered LLM-prompting pipeline to generate tailored learning pathways based on user skill gaps.",
-      "Built high-speed asynchronous REST APIs using FastAPI and Pydantic.",
-      "Reduced AI response latency by 35% through response streaming and intelligent prompt caching."
+      "Engineered multi-role authentication and authorization (Admin, Doctor, Pharmacist) using JWT and Node.js.",
+      "Designed relational database models in MySQL and developed responsive React dashboards for clinical operations."
     ],
-    tech: ["Python", "FastAPI", "Google Gemini API", "React", "Tailwind"]
-  },
-  {
-    role: "Software Developer Intern",
-    company: "Bireena Medico",
-    period: "2024",
-    type: "Internship",
-    description: "Architected Hospital & Pharmacy Management System streamlining inventory, appointments, and patient billing.",
-    highlights: [
-      "Designed relational database schema in MySQL handling multi-role access control (Admin, Doctor, Pharmacist).",
-      "Created dynamic billing and prescription generator using React and Node.js backend.",
-      "Optimized query response times by 40% using indexed SQL queries."
-    ],
-    tech: ["Node.js", "Express", "React", "MySQL", "REST APIs"]
+    tech: ["React.js", "Node.js", "Express.js", "MySQL", "REST APIs", "JWT"]
   },
   {
     role: "Web Development Intern",
-    company: "NetSage AI",
-    period: "2024",
+    company: "Yashi IT Services",
+    period: "Aug 2025 – Sep 2025",
     type: "Internship",
-    description: "Created automated network troubleshooting & assistant interface with responsive dashboards.",
+    description: "Developed responsive websites using HTML, CSS, JavaScript, and Tailwind CSS, while customizing Shopify and WordPress themes, plugins, and layouts.",
     highlights: [
-      "Built interactive web application interfacing with network diagnostics utilities.",
-      "Designed dark-mode UI with customizable metrics charts and status indicators."
+      "Created custom responsive frontend components using HTML5, CSS3, JavaScript (ES6+), and Tailwind CSS.",
+      "Configured and extended Shopify & WordPress eCommerce templates, plugins, and custom layout structures."
     ],
-    tech: ["JavaScript", "HTML5", "CSS3", "Flask", "Python"]
+    tech: ["HTML5", "CSS3", "JavaScript", "Tailwind CSS", "Shopify", "WordPress"]
+  },
+  {
+    role: "Cisco Virtual Internship",
+    company: "Cybersecurity, Networking & Artificial Intelligence",
+    period: "2024, 2025 & 2026",
+    type: "Virtual Internship",
+    description: "Completed Cisco virtual internships in Cybersecurity, Networking, and Artificial Intelligence, gaining practical exposure through virtual labs, technical training, and hands-on assessments.",
+    highlights: [
+      "Gained practical exposure in network architecture, packet analysis, firewall configuration, and routing protocols.",
+      "Completed hands-on labs and technical assessments covering cybersecurity fundamentals, AI tools, and network defense strategies."
+    ],
+    tech: ["Networking", "Cybersecurity", "AI", "Cisco Packet Tracer", "System Defense"]
   }
 ];
 
