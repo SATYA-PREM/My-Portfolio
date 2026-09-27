@@ -144,9 +144,9 @@ export const projectsData = [
     id: "codeforcareer",
     title: "CodeForCareer",
     subtitle: "Full-Stack Placement & Coding Platform",
-    description: "Developed a full-stack placement and career acceleration platform with coding practice, structured learning paths, quizzes, project-based labs, mock interviews, and skill assessments to support end-to-end placement preparation. Implemented AI-powered ATS resume analysis using Gemini API, multi-language code execution, and secure JWT authentication with protected routes, enabling personalized resume feedback and an integrated coding practice experience.",
+    description: "Developed a full-stack placement and career acceleration platform with coding practice, structured learning paths, quizzes, project-based labs, mock interviews, and skill assessments to support end-to-end placement preparation. Implemented AI-powered ATS resume analysis using Gemini API, multi-language code execution, and secure JWT authentication with protected routes.",
     featured: true,
-    tags: ["React.js", "Node.js", "Express.js", "MongoDB", "Gemini API", "Tailwind CSS", "JWT", "Google OAuth"],
+    tags: ["React.js", "Node.js", "Express.js", "MongoDB", "Gemini API", "Piston API", "JWT"],
     liveUrl: "https://codeforcareer.vercel.app/",
     githubUrl: "https://github.com/SATYA-PREM/Code4career"
   },
@@ -156,7 +156,7 @@ export const projectsData = [
     subtitle: "AI-Powered Product Analytics",
     description: "Building an AI-powered product intelligence platform with an end-to-end data pipeline for ingestion, validation, cleaning, preprocessing, AI analysis, embeddings, clustering, trend analysis, and feature prioritization. Implemented RAG-based retrieval and Gemini-powered AI agents to transform analyzed customer feedback into product insights, prioritized features, PRDs, user stories, roadmap recommendations, and reports.",
     featured: true,
-    tags: ["React.js", "Vite", "Python", "FastAPI", "MongoDB", "Gemini API", "RAG", "AI Agents", "JWT"],
+    tags: ["AI/ML", "RAG", "Product Analytics", "Python", "FastAPI", "React"],
     liveUrl: "https://ai-driven-product.vercel.app/",
     githubUrl: "https://github.com/SATYA-PREM/Product-Intelligence-Platform-AI-Powered-Product-Analytics-"
   },
@@ -166,9 +166,19 @@ export const projectsData = [
     subtitle: "GenAI-Powered Adaptive Learning & Career Mentor",
     description: "Developed a GenAI-powered adaptive learning platform that generates personalized learning paths, diagnostic assessments, remedial plans, career simulations, and AI-powered resume analysis. Implemented Gemini-powered AI services for backward-designed roadmaps, learning diagnostics, career simulations, resume parsing, and context-aware AI mentoring with secure JWT authentication and REST APIs.",
     featured: true,
-    tags: ["React.js", "Vite", "Tailwind CSS", "Node.js", "Express.js", "MongoDB Atlas", "Gemini API", "Mongoose", "JWT"],
+    tags: ["React.js", "Node.js", "Express.js", "MongoDB", "Gemini API", "FastAPI", "Python"],
     liveUrl: "https://ai-path-recomender-satya.vercel.app/",
     githubUrl: "https://github.com/SATYA-PREM/AI-PATH-RECOMENDER-PUBLIC"
+  },
+  {
+    id: "netsage-ai",
+    title: "NetSage AI",
+    subtitle: "Smart Network Diagnostics & AI Assistant",
+    description: "Smart network diagnostics application and interactive AI assistant for diagnosing network connectivity, monitoring latency, analyzing packet data, and delivering automated network repair steps.",
+    featured: false,
+    tags: ["React.js", "Flask", "Python", "OpenAI / Gemini", "Vercel"],
+    liveUrl: "https://net-sage-ai-rho.vercel.app/assistant",
+    githubUrl: "https://github.com/SATYA-PREM/NetSage-AI"
   },
   {
     id: "bireena-medico",
@@ -176,19 +186,39 @@ export const projectsData = [
     subtitle: "Hospital Management System",
     description: "Developing a multi-role hospital management system covering patient management, appointments, EMR, prescriptions, laboratory, pharmacy, billing, inventory, reports, and analytics. Implementing secure REST APIs with JWT authentication and role-based access control, along with responsive dashboards and real-time workflows for administrators, doctors, clinics, pharmacy, laboratory, and appointment operations.",
     featured: false,
-    tags: ["React.js", "JavaScript", "Node.js", "Express.js", "MongoDB", "Supabase", "JWT", "REST APIs"],
+    tags: ["React.js", "JavaScript", "Node.js", "Express.js", "MongoDB", "Supabase", "JWT"],
     liveUrl: "https://hospital-management-system-five-khaki.vercel.app/",
     githubUrl: "https://github.com/SATYA-PREM/BIREENA-MEDICO/"
   },
   {
-    id: "netsage-ai",
-    title: "NetSage AI",
-    subtitle: "Network Troubleshooting & AI Assistant",
-    description: "Smart network diagnostics application and interactive AI assistant for diagnosing network connectivity, monitoring latency, analyzing packet data, and delivering automated network repair steps.",
+    id: "sampada-herbs",
+    title: "Sampada Herbs & Spices",
+    subtitle: "E-Commerce Storefront & Management System",
+    description: "Full-featured e-commerce web platform built for high-quality spices, organic products, and herbal solutions with dynamic product catalogs, search, cart management, and seamless online shopping experience.",
     featured: false,
-    tags: ["React.js", "Flask", "Python", "OpenAI / Gemini", "Vercel"],
-    liveUrl: "https://net-sage-ai-rho.vercel.app/assistant",
-    githubUrl: "https://github.com/SATYA-PREM/NetSage-AI"
+    tags: ["React.js", "Node.js", "Express.js", "MongoDB", "E-Commerce"],
+    liveUrl: "https://sampadastore.shop/",
+    githubUrl: "https://github.com/SATYA-PREM"
+  },
+  {
+    id: "smart-solar",
+    title: "Smart Solar Solutions",
+    subtitle: "Clean Energy Analytics & Service Portal",
+    description: "Interactive platform and web portal for solar power estimations, energy efficiency analytics, installer connections, and renewable energy monitoring.",
+    featured: false,
+    tags: ["React.js", "Tailwind CSS", "Vite", "Web Analytics"],
+    liveUrl: "https://smart-solar-solution.vercel.app/",
+    githubUrl: "https://github.com/SATYA-PREM"
+  },
+  {
+    id: "offline-ai",
+    title: "Offline AI Assistant",
+    subtitle: "Local Intelligence & Task Automation Assistant",
+    description: "Lightweight, privacy-focused offline AI assistant providing fast local query processing, command execution, and automated assistant tools without requiring continuous internet connectivity.",
+    featured: false,
+    tags: ["Python", "FastAPI", "React.js", "Local LLM", "Offline AI"],
+    liveUrl: "https://my-assistent-nine.vercel.app/",
+    githubUrl: "https://github.com/SATYA-PREM/my-assistent"
   }
 ];
 
@@ -228,7 +258,7 @@ export const chatKnowledge = {
     "Satya Prem is a 4th-year B.Tech CSE student at SRIT Jabalpur. He's a Software Developer focused on full-stack development, backend systems, REST APIs, databases, and AI. He has 10+ projects, 4 internships, and qualified GATE 2026 CSE."
   ],
   projects: [
-    "Satya's key projects include:\n• Product Intelligence Platform — AI-Powered Product Analytics\n• NetSage AI — Smart Network Diagnostics & Assistant\n• AI Path Recommender — Skill & Career Roadmap Generator\n• CodeForCareer — Full-Stack Placement Platform\n• Bireena Medico — Hospital Management System\n• LearnWise AI — GenAI Adaptive Learning Mentor"
+    "Satya's key projects include:\n• CodeForCareer — Full-Stack Placement & Coding Platform\n• Product Intelligence Platform — AI-Powered Product Analytics\n• LearnWise AI — GenAI Adaptive Learning & Career Mentor\n• NetSage AI — Smart Network Diagnostics & Assistant\n• Bireena Medico — Hospital Management System\n• Sampada Herbs & Spices — E-Commerce Storefront\n• Smart Solar Solutions — Clean Energy Analytics Portal\n• Offline AI Assistant — Local Intelligence Assistant"
   ],
   skills: [
     "Satya's tech stack:\n• Languages: C, C++, Java, Python, JavaScript, SQL\n• Frontend: React.js, Redux, Tailwind CSS, HTML5, CSS3\n• Backend: Node.js, Express, Flask, FastAPI, REST APIs, JWT, OAuth\n• Databases: MySQL, MongoDB, PostgreSQL, Supabase\n• AI/ML: Pandas, NumPy, Scikit-learn, OpenAI API, Gemini API\n• Tools: Git, Docker, Vercel, Postman, VS Code"
