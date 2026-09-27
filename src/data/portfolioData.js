@@ -1,6 +1,6 @@
 export const personalData = {
   name: "Satya Prem",
-  title: "Software Engineering Student | Backend & Full-Stack Developer | DSA",
+  title: "Backend / Software Engineer with AI Engineering Capability",
   headline: "Building scalable software with backend, full-stack and AI systems.",
   tagline: "Fourth-year B.Tech CSE student with hands-on experience in C++, Java, Python, DSA, DBMS, REST APIs, and full-stack development, building practical products with Node.js, Express.js, Flask, FastAPI, React.js, MongoDB, and MySQL.",
   email: "satyaprem619@gmail.com",
