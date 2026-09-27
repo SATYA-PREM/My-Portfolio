@@ -1543,33 +1543,58 @@ section {
     border: 1px solid var(--border);
     border-radius: var(--radius);
     padding: 1.5rem 1.6rem;
-    transition: transform 0.25s, border-color 0.25s;
+    transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+    display: flex;
+    flex-direction: column;
 }
 
 .achieve-card:hover {
     transform: translateY(-4px);
     border-color: var(--accent);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+[data-theme="light"] .achieve-card:hover {
+    box-shadow: 0 12px 25px rgba(15, 23, 42, 0.08);
+}
+
+.achieve-stat-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.25rem;
+}
+
+.achieve-stat {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.65rem;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
 }
 
 .achieve-title {
     font-family: 'Syne', sans-serif;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 700;
     color: var(--text);
-    margin-bottom: 0.3rem;
 }
 
-.achieve-org {
+.achieve-sub {
     font-family: 'Space Mono', monospace;
-    font-size: 0.65rem;
-    color: var(--accent);
-    margin-bottom: 0.6rem;
+    font-size: 0.68rem;
+    color: var(--muted);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
 }
 
 .achieve-desc {
     font-size: 0.82rem;
     color: var(--muted);
     line-height: 1.6;
+    margin-top: auto;
 }
 
 /* ============================================================

@@ -43,8 +43,8 @@ export const aboutData = {
     "Qualified **GATE 2026 (CSE)**. Experienced across 4 internships in full-stack, AI engineering, and software development."
   ],
   profileItems: [
-    { label: "Degree", value: "B.Tech CSE (2022–2026)" },
-    { label: "Institution", value: "SRIT Jabalpur" },
+    { label: "Degree", value: "B.Tech CSE (2023–2027)" },
+    { label: "Institution", value: "Shri Ram Ins Jabalpur" },
     { label: "GATE Exam", value: "Qualified CSE 2026" },
     { label: "Primary Stack", value: "Node.js, React, Express, Python" },
     { label: "Databases", value: "MySQL, MongoDB, PostgreSQL" },
@@ -233,28 +233,60 @@ export const projectsData = [
 
 export const achievementsData = [
   {
-    title: "Qualified GATE 2026 (CSE)",
+    stat: "GATE",
+    title: "2026 Qualified",
+    subtitle: "Graduate Aptitude Test in Engineering",
     organization: "IIT / NTA",
     year: "2026",
-    description: "Qualified Graduate Aptitude Test in Engineering in Computer Science & Information Technology, demonstrating core proficiency in Algorithms, Operating Systems, DBMS, Theory of Computation, and Computer Architecture."
+    description: "Qualified Graduate Aptitude Test in Engineering in Computer Science & Information Technology."
   },
   {
-    title: "500+ DSA Problems Solved",
-    organization: "LeetCode & GeeksforGeeks",
-    year: "2023–2025",
-    description: "Solved over 500 algorithm & data structure problems focusing on Dynamic Programming, Graph Algorithms, Binary Search Trees, and System Design fundamentals."
+    stat: "AWS",
+    title: "Training Badge",
+    subtitle: "Cloud Foundations",
+    organization: "AWS Training & Certification",
+    year: "2025",
+    description: "Earned official AWS Cloud Foundations badge covering core cloud infrastructure, security, and services."
   },
   {
-    title: "Smart India Hackathon Participant",
-    organization: "Ministry of Education, Govt. of India",
-    year: "2024",
-    description: "Led team to build prototype solution for automated inventory and crop management utilizing IoT sensor data and web analytics."
+    stat: "2629",
+    title: "Global Rank",
+    subtitle: "TCS CodeVita Season 13",
+    organization: "TCS CodeVita",
+    year: "2025",
+    description: "Achieved Global Rank 2629 in TCS CodeVita Season 13 competitive programming contest."
   },
   {
-    title: "Full-Stack Development Certification",
-    organization: "Udemy & Coursera",
-    year: "2024",
-    description: "Completed comprehensive practical specialization covering modern MERN stack development, secure authentication, and cloud deployment."
+    stat: "100+",
+    title: "LeetCode Solved",
+    subtitle: "Data Structures & Algorithms",
+    organization: "LeetCode",
+    year: "2023–2026",
+    description: "Solved 100+ algorithm & data structure problems focusing on Dynamic Programming, Graphs, and Trees."
+  },
+  {
+    stat: "3+",
+    title: "Professional Websites",
+    subtitle: "Delivered and launched",
+    organization: "Client Solutions",
+    year: "2025–2026",
+    description: "Delivered and launched 3+ live production client websites and e-commerce platforms."
+  },
+  {
+    stat: "10+",
+    title: "Projects Built",
+    subtitle: "Web · AI · Security",
+    organization: "Full-Stack & AI Systems",
+    year: "2023–2026",
+    description: "Architected and built 10+ software projects spanning full-stack, AI agents, and network utilities."
+  },
+  {
+    stat: "4",
+    title: "Internships",
+    subtitle: "AI/ML · Web Dev · Cyber Security",
+    organization: "Industry Experience",
+    year: "2024–2026",
+    description: "Completed 4 internships in AI/ML, Full-Stack Development, Web Development, and Cybersecurity."
   }
 ];
 
