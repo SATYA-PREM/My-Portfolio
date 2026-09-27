@@ -128,22 +128,28 @@ export default function App() {
 
   // Handle email click (Gmail web compose on desktop, native mail app on mobile)
   const handleEmailClick = (e) => {
-    if (e) e.preventDefault();
     const recipient = personalData.email;
     const subject = encodeURIComponent('Hello Satya,');
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${recipient}&su=${subject}`;
+    const mailtoUrl = `mailto:${recipient}?subject=${subject}`;
+
     const isMobile =
       /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile/i.test(
         navigator.userAgent
       ) || (window.innerWidth <= 768 && ('ontouchstart' in window || navigator.maxTouchPoints > 0));
 
     if (isMobile) {
-      window.location.href = `mailto:${recipient}?subject=${subject}`;
+      window.location.href = mailtoUrl;
     } else {
-      window.open(
-        `https://mail.google.com/mail/?view=cm&fs=1&to=${recipient}&su=${subject}`,
-        '_blank',
-        'noopener,noreferrer'
-      );
+      if (e) e.preventDefault();
+      try {
+        const win = window.open(gmailUrl, '_blank', 'noopener,noreferrer');
+        if (!win || win.closed || typeof win.closed === 'undefined') {
+          window.location.href = mailtoUrl;
+        }
+      } catch (err) {
+        window.location.href = mailtoUrl;
+      }
     }
   };
 
