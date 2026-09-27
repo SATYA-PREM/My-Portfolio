@@ -25,7 +25,7 @@ export const heroStats = [
   { value: "10+", label: "Projects Built" },
   { value: "4", label: "Internships" },
   { value: "GATE '26", label: "Qualified CSE" },
-  { value: "8.1", label: "CGPA (SRIT)" }
+  { value: "500+", label: "DSA Solved" }
 ];
 
 export const heroNodes = [
@@ -40,11 +40,11 @@ export const aboutData = {
   bio: [
     "I am a **fourth-year B.Tech Computer Science student** at Shri Ram Institute of Technology, Jabalpur, with a strong foundation in **Data Structures, Algorithms, DBMS, and System Design**.",
     "Driven by problem-solving and software architecture, I specialize in building **high-performance backend services, RESTful APIs, microservices**, and **AI-powered applications**.",
-    "Qualified **GATE 2026 (CSE)** with a CGPA of **8.1/10**. Experienced across 4 internships in full-stack, AI engineering, and software development."
+    "Qualified **GATE 2026 (CSE)**. Experienced across 4 internships in full-stack, AI engineering, and software development."
   ],
   profileItems: [
     { label: "Degree", value: "B.Tech CSE (2022–2026)" },
-    { label: "Institution", value: "SRIT Jabalpur (CGPA 8.1)" },
+    { label: "Institution", value: "SRIT Jabalpur" },
     { label: "GATE Exam", value: "Qualified CSE 2026" },
     { label: "Primary Stack", value: "Node.js, React, Express, Python" },
     { label: "Databases", value: "MySQL, MongoDB, PostgreSQL" },
@@ -225,7 +225,7 @@ export const chatKnowledge = {
     "Hello! How can I help you learn about Satya's work and technical background?"
   ],
   who: [
-    "Satya Prem is a 4th-year B.Tech CSE student at SRIT Jabalpur with CGPA 8.1. He's a Software Developer focused on full-stack development, backend systems, REST APIs, databases, and AI. He has 10+ projects, 4 internships, and qualified GATE 2026 CSE."
+    "Satya Prem is a 4th-year B.Tech CSE student at SRIT Jabalpur. He's a Software Developer focused on full-stack development, backend systems, REST APIs, databases, and AI. He has 10+ projects, 4 internships, and qualified GATE 2026 CSE."
   ],
   projects: [
     "Satya's key projects include:\n• Product Intelligence Platform — AI-Powered Product Analytics\n• NetSage AI — Smart Network Diagnostics & Assistant\n• AI Path Recommender — Skill & Career Roadmap Generator\n• CodeForCareer — Full-Stack Placement Platform\n• Bireena Medico — Hospital Management System\n• LearnWise AI — GenAI Adaptive Learning Mentor"
