@@ -1,8 +1,8 @@
 export const personalData = {
   name: "Satya Prem",
   title: "Backend / Software Engineer with AI Engineering Capability",
-  headline: "Building scalable software with backend, full-stack and AI systems.",
-  tagline: "Fourth-year B.Tech CSE student with hands-on experience in C++, Java, Python, DSA, DBMS, REST APIs, and full-stack development, building practical products with Node.js, Express.js, Flask, FastAPI, React.js, MongoDB, and MySQL.",
+  headline: "Building scalable software with Java, Spring Boot, REST APIs, and AI systems.",
+  tagline: "Fourth-year B.Tech CSE student specializing in core backend systems (Java, Spring Boot, REST APIs, PostgreSQL, JPA/Hibernate, Spring Security, Redis) with AI engineering capability (Python, FastAPI, Gemini API, RAG).",
   email: "satyaprem619@gmail.com",
   phone: "+91-9931798085",
   location: "Jabalpur, MP · India",
@@ -29,26 +29,26 @@ export const heroStats = [
 ];
 
 export const heroNodes = [
-  { label: "C++ / Java", isCore: false, style: { left: '8%', top: '15%', animationDelay: '0s' } },
-  { label: "Node.js", isCore: false, style: { right: '10%', top: '20%', animationDelay: '-1s' } },
-  { label: "React.js", isCore: false, style: { left: '12%', bottom: '22%', animationDelay: '-2s' } },
-  { label: "MongoDB", isCore: false, style: { right: '14%', bottom: '25%', animationDelay: '-3s' } },
-  { label: "SP", subLabel: "Full-Stack", isCore: true, style: {} }
+  { label: "Java / Spring Boot", isCore: false, style: { left: '6%', top: '15%', animationDelay: '0s' } },
+  { label: "REST / PostgreSQL", isCore: false, style: { right: '6%', top: '20%', animationDelay: '-1s' } },
+  { label: "Python / FastAPI", isCore: false, style: { left: '8%', bottom: '22%', animationDelay: '-2s' } },
+  { label: "GenAI / RAG", isCore: false, style: { right: '10%', bottom: '25%', animationDelay: '-3s' } },
+  { label: "SP", subLabel: "Backend & AI", isCore: true, style: {} }
 ];
 
 export const aboutData = {
   bio: [
-    "I am a **fourth-year B.Tech Computer Science student** at Shri Ram Institute of Technology, Jabalpur, with a strong foundation in **Data Structures, Algorithms, DBMS, and System Design**.",
-    "Driven by problem-solving and software architecture, I specialize in building **high-performance backend services, RESTful APIs, microservices**, and **AI-powered applications**.",
-    "Qualified **GATE 2026 (CSE)**. Experienced across 4 internships in full-stack, AI engineering, and software development."
+    "I am a **fourth-year B.Tech Computer Science student** at **Shri Ram Institute of Technology, Jabalpur**, with a strong foundation in **Data Structures, Algorithms, DBMS, and System Design**.",
+    "Driven by backend engineering, I specialize in building high-performance services with **Java, Spring Boot, REST APIs, PostgreSQL, JPA/Hibernate, Spring Security**, and **Redis**.",
+    "As my AI differentiator, I leverage **Python, FastAPI, Gemini API, Embeddings**, and **RAG** for intelligent systems. Qualified **GATE 2026 (CSE)**."
   ],
   profileItems: [
     { label: "Degree", value: "B.Tech CSE (2023–2027)" },
-    { label: "Institution", value: "Shri Ram Ins Jabalpur" },
+    { label: "Institution", value: "Shri Ram Institute of Technology, Jabalpur" },
     { label: "GATE Exam", value: "Qualified CSE 2026" },
-    { label: "Primary Stack", value: "Node.js, React, Express, Python" },
-    { label: "Databases", value: "MySQL, MongoDB, PostgreSQL" },
-    { label: "Focus Areas", value: "Backend Systems, APIs, AI Integration" }
+    { label: "Primary Stack", value: "Java, Spring Boot, REST APIs, PostgreSQL, JPA/Hibernate" },
+    { label: "AI Capability", value: "Python, FastAPI, Gemini API, Embeddings, RAG" },
+    { label: "Security & Cloud", value: "Spring Security, Redis, Docker, AWS" }
   ]
 };
 
@@ -56,7 +56,7 @@ export const skillsCategories = [
   {
     title: "Programming Languages",
     icon: "code",
-    skills: ["C++", "C", "Java", "Python", "JavaScript", "TypeScript", "SQL"]
+    skills: ["Java", "Python", "C++", "C", "JavaScript", "TypeScript", "SQL"]
   },
   {
     title: "Core Computer Science",
@@ -71,9 +71,9 @@ export const skillsCategories = [
     ]
   },
   {
-    title: "Backend Development",
+    title: "Backend Development (Primary)",
     icon: "server",
-    skills: ["Node.js", "Express.js", "FastAPI", "Flask", "REST APIs", "JWT", "RAG", "Spring Boot (Learning)"]
+    skills: ["Java", "Spring Boot", "REST APIs", "JPA / Hibernate", "Spring Security", "Redis", "Node.js", "Express.js"]
   },
   {
     title: "Frontend Development",
@@ -83,17 +83,17 @@ export const skillsCategories = [
   {
     title: "Databases",
     icon: "database",
-    skills: ["MongoDB", "MongoDB Atlas", "MySQL", "Supabase"]
+    skills: ["PostgreSQL", "MySQL", "MongoDB", "MongoDB Atlas", "Supabase"]
   },
   {
-    title: "AI/ML & Generative AI",
+    title: "AI/ML & Generative AI (Differentiator)",
     icon: "cpu",
-    skills: ["Gemini API", "RAG", "Embeddings", "AI Agents", "Scikit-learn", "NumPy", "Pandas"]
+    skills: ["Python", "FastAPI", "Gemini API", "LLM APIs", "Embeddings", "RAG", "AI Agents", "Scikit-learn", "NumPy", "Pandas"]
   },
   {
     title: "Cloud & DevOps",
     icon: "cloud",
-    skills: ["AWS EC2", "S3", "IAM", "Docker", "GitHub Actions", "Vercel", "Render"]
+    skills: ["Docker", "AWS EC2", "S3", "IAM", "GitHub Actions", "Vercel", "Render"]
   }
 ];
 

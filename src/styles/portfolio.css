@@ -1254,12 +1254,14 @@ section {
 .about-profile-item {
     display: flex;
     flex-direction: column;
-    gap: 0.15rem;
-    padding: 0.6rem 0.8rem;
+    gap: 0.25rem;
+    padding: 0.75rem 0.9rem;
     border-radius: 8px;
     background: var(--profile-item-bg);
     border: 1px solid transparent;
     transition: border-color 0.2s, background 0.2s;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .about-profile-item:hover {
@@ -1268,16 +1270,19 @@ section {
 
 .about-profile-item .label {
     font-family: 'Space Mono', monospace;
-    font-size: 0.55rem;
+    font-size: 0.58rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--muted);
 }
 
 .about-profile-item .value {
-    font-size: 0.85rem;
+    font-size: 0.84rem;
     font-weight: 600;
     color: var(--text);
+    line-height: 1.4;
+    word-break: break-word;
+    overflow-wrap: anywhere;
 }
 
 /* ============================================================
