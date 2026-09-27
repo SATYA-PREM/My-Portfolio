@@ -1,0 +1,105 @@
+/* ============================================================
+   EXPERIENCE SECTION
+   ============================================================ */
+.exp-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+    width: 100%;
+}
+
+.exp-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.8rem 2rem;
+    position: relative;
+    transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.exp-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+}
+
+[data-theme="light"] .exp-card:hover {
+    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.07);
+}
+
+.exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 0.8rem;
+}
+
+.exp-role {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.exp-company {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--accent);
+    display: block;
+    margin-top: 0.2rem;
+}
+
+.exp-period {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--muted);
+    background: var(--theme-toggle-bg);
+    border: 1px solid var(--border);
+    padding: 0.25rem 0.65rem;
+    border-radius: 4px;
+    white-space: nowrap;
+}
+
+.exp-desc {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.65;
+    margin-bottom: 0.8rem;
+}
+
+.exp-highlights {
+    list-style: none;
+    margin-bottom: 1rem;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.exp-highlights li {
+    font-size: 0.85rem;
+    color: var(--muted);
+    position: relative;
+    padding-left: 1.2rem;
+    margin-bottom: 0.4rem;
+    line-height: 1.6;
+}
+
+.exp-highlights li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+.exp-tech {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+}
+

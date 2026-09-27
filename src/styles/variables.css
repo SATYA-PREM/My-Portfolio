@@ -1,0 +1,203 @@
+/* ============================================================
+   ROOT VARIABLES (DARK DEFAULT)
+   ============================================================ */
+:root {
+    --bg: #0a0c0e;
+    --bg2: #0e1217;
+    --surface: #111a20;
+    --border: rgba(94, 234, 212, 0.14);
+    --border-hover: rgba(94, 234, 212, 0.4);
+    --accent: #5eead4;
+    --accent2: #f6c177;
+    --accent3: #ff847c;
+    --text: #e8f0f7;
+    --muted: #779796;
+    --card: #0d1c1d;
+    --github-color: #7ee787;
+    --radius: 16px;
+    --shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+    --nav-bg: rgba(10, 12, 14, 0.85);
+    --nav-bg-scrolled: rgba(10, 12, 14, 0.96);
+    --mobile-nav-bg: linear-gradient(160deg, #0a0c0e 0%, #0e1a22 50%, #0a0c0e 100%);
+    --theme-toggle-bg: rgba(94, 234, 212, 0.08);
+    --theme-toggle-hover: rgba(94, 234, 212, 0.16);
+    --chip-bg: rgba(255, 255, 255, 0.025);
+    --chip-hover-bg: rgba(94, 234, 212, 0.05);
+    --profile-item-bg: rgba(255, 255, 255, 0.02);
+    --chat-bubble-bot-bg: rgba(94, 234, 212, 0.08);
+    --chat-bubble-bot-border: rgba(94, 234, 212, 0.1);
+}
+
+/* ============================================================
+   LIGHT THEME VARIABLES & OVERRIDES
+   ============================================================ */
+[data-theme="light"] {
+    --bg: #f8fafc;
+    --bg2: #f1f5f9;
+    --surface: #ffffff;
+    --border: rgba(15, 118, 110, 0.18);
+    --border-hover: rgba(15, 118, 110, 0.45);
+    --accent: #0f766e;
+    --accent2: #b45309;
+    --accent3: #e11d48;
+    --text: #0f172a;
+    --muted: #475569;
+    --card: #ffffff;
+    --github-color: #15803d;
+    --radius: 16px;
+    --shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
+    --nav-bg: rgba(248, 250, 252, 0.88);
+    --nav-bg-scrolled: rgba(248, 250, 252, 0.98);
+    --mobile-nav-bg: linear-gradient(160deg, #f8fafc 0%, #f1f5f9 50%, #ffffff 100%);
+    --theme-toggle-bg: rgba(15, 118, 110, 0.08);
+    --theme-toggle-hover: rgba(15, 118, 110, 0.16);
+    --chip-bg: rgba(15, 23, 42, 0.04);
+    --chip-hover-bg: rgba(15, 118, 110, 0.08);
+    --profile-item-bg: rgba(15, 23, 42, 0.03);
+    --chat-bubble-bot-bg: rgba(15, 118, 110, 0.08);
+    --chat-bubble-bot-border: rgba(15, 118, 110, 0.2);
+}
+
+/* Smooth theme transition */
+html.theme-transitioning,
+html.theme-transitioning *,
+html.theme-transitioning *::before,
+html.theme-transitioning *::after {
+    transition: background-color 0.25s ease, border-color 0.25s ease, color 0.2s ease, box-shadow 0.25s ease !important;
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background:
+        radial-gradient(circle at 78% 16%, rgba(94, 234, 212, 0.07), transparent 28%),
+        radial-gradient(circle at 12% 72%, rgba(246, 193, 119, 0.045), transparent 24%),
+        var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
+#root,
+.portfolio-app {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
+[data-theme="light"] body {
+    background:
+        radial-gradient(circle at 78% 16%, rgba(15, 118, 110, 0.08), transparent 32%),
+        radial-gradient(circle at 12% 72%, rgba(180, 83, 9, 0.05), transparent 28%),
+        var(--bg);
+}
+
+/* Noise overlay */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 999;
+    opacity: 0.3;
+}
+
+[data-theme="light"] body::before {
+    opacity: 0.12;
+}
+
+/* Grid bg */
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(94, 234, 212, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(94, 234, 212, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+[data-theme="light"] body::after {
+    background-image:
+        linear-gradient(rgba(15, 118, 110, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15, 118, 110, 0.05) 1px, transparent 1px);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(94, 234, 212, 0.2);
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+}
+
+/* Sections General */
+section {
+    padding: 3.8rem 2.5rem;
+    max-width: 1320px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.section-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.section-tag::before {
+    content: '//';
+    color: var(--muted);
+}
+
+.section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+    line-height: 1.15;
+}
+
