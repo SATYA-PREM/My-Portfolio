@@ -1,0 +1,72 @@
+/* ============================================================
+   ABOUT SECTION
+   ============================================================ */
+#about {
+    background: linear-gradient(180deg, transparent, rgba(94, 234, 212, 0.015) 50%, transparent);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+    width: 100%;
+}
+
+.about-text p {
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1.2rem;
+}
+
+.about-text p strong {
+    color: var(--text);
+    font-weight: 500;
+}
+
+.about-profile-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.8rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.about-profile-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.75rem 0.9rem;
+    border-radius: 8px;
+    background: var(--profile-item-bg);
+    border: 1px solid transparent;
+    transition: border-color 0.2s, background 0.2s;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.about-profile-item:hover {
+    border-color: var(--border);
+}
+
+.about-profile-item .label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.about-profile-item .value {
+    font-size: 0.84rem;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.4;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
