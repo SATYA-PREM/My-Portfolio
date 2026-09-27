@@ -5,6 +5,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
     gap: 1.5rem;
+    align-items: start;
     width: 100%;
 }
 
@@ -141,3 +142,4 @@
     color: var(--text);
     box-shadow: 0 0 10px rgba(94, 234, 212, 0.15);
 }
+

@@ -16,6 +16,9 @@
     transition: transform 0.25s, border-color 0.25s;
     width: 100%;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .skill-card:hover {
@@ -38,6 +41,8 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.45rem;
+    align-content: flex-start;
+    flex: 1;
 }
 
 .skill-pill {
@@ -56,3 +61,4 @@
     color: var(--accent);
     background: var(--theme-toggle-hover);
 }
+

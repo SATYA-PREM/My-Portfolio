@@ -37,16 +37,15 @@ export default function BackgroundCanvas() {
 
     // Particles Array
     let particles = [];
-    const particleCount = Math.min(Math.floor((width * height) / 18000), 75);
+    const particleCount = Math.min(Math.floor((width * height) / 20000), 60);
 
     class Particle {
       constructor() {
         this.x = Math.random() * width;
         this.y = Math.random() * height;
-        this.vx = (Math.random() - 0.5) * 0.6;
-        this.vy = (Math.random() - 0.5) * 0.6;
-        this.radius = Math.random() * 1.8 + 1;
-        this.baseAlpha = Math.random() * 0.4 + 0.2;
+        this.vx = (Math.random() - 0.5) * 0.5;
+        this.vy = (Math.random() - 0.5) * 0.5;
+        this.radius = Math.random() * 1.0 + 0.8;
         this.isGold = Math.random() < 0.2;
       }
 
@@ -67,8 +66,8 @@ export default function BackgroundCanvas() {
             const force = (mouse.radius - dist) / mouse.radius;
             const dirX = dx / dist;
             const dirY = dy / dist;
-            this.x -= dirX * force * 1.5;
-            this.y -= dirY * force * 1.5;
+            this.x -= dirX * force * 1.4;
+            this.y -= dirY * force * 1.4;
           }
         }
       }
@@ -77,9 +76,9 @@ export default function BackgroundCanvas() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
         if (this.isGold) {
-          ctx.fillStyle = isLight ? 'rgba(180, 83, 9, 0.7)' : 'rgba(246, 193, 119, 0.85)';
+          ctx.fillStyle = isLight ? 'rgba(180, 83, 9, 0.65)' : 'rgba(246, 193, 119, 0.75)';
         } else {
-          ctx.fillStyle = isLight ? 'rgba(15, 118, 110, 0.6)' : 'rgba(94, 234, 212, 0.7)';
+          ctx.fillStyle = isLight ? 'rgba(15, 118, 110, 0.55)' : 'rgba(94, 234, 212, 0.65)';
         }
         ctx.fill();
       }
@@ -111,15 +110,15 @@ export default function BackgroundCanvas() {
           const dy = particles[i].y - particles[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
 
-          if (dist < 130) {
-            const alpha = (1 - dist / 130) * (isLight ? 0.15 : 0.12);
+          if (dist < 125) {
+            const alpha = (1 - dist / 125) * (isLight ? 0.12 : 0.1);
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
             ctx.strokeStyle = isLight
               ? `rgba(15, 118, 110, ${alpha})`
               : `rgba(94, 234, 212, ${alpha})`;
-            ctx.lineWidth = 0.8;
+            ctx.lineWidth = 0.7;
             ctx.stroke();
           }
         }
@@ -145,13 +144,14 @@ export default function BackgroundCanvas() {
         position: 'fixed',
         top: 0,
         left: 0,
-        width: '100vw',
-        height: '100vh',
+        width: '100%',
+        height: '100%',
         pointerEvents: 'none',
         zIndex: 0,
-        opacity: 0.85
+        opacity: 0.85,
+        filter: 'blur(1.2px)',
+        WebkitFilter: 'blur(1.2px)'
       }}
     />
   );
 }
-

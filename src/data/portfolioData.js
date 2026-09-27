@@ -63,8 +63,6 @@ export const skillsCategories = [
     icon: "terminal",
     skills: [
       "Data Structures & Algorithms",
-      "OOP",
-      "DBMS",
       "Operating Systems (OS)",
       "Computer Networks (CN)",
       "Software Engineering"
