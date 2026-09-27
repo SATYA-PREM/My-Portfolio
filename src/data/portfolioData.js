@@ -25,7 +25,7 @@ export const heroStats = [
   { value: "10+", label: "Projects Built" },
   { value: "4", label: "Internships" },
   { value: "GATE '26", label: "Qualified CSE" },
-  { value: "500+", label: "DSA Solved" }
+  { value: "100+", label: "DSA Solved" }
 ];
 
 export const heroNodes = [
@@ -56,32 +56,37 @@ export const skillsCategories = [
   {
     title: "Programming Languages",
     icon: "code",
-    skills: ["C", "C++", "Java", "Python", "JavaScript (ES6+)", "SQL", "HTML5", "CSS3"]
+    skills: ["C++", "C", "Java", "Python", "JavaScript", "TypeScript", "SQL"]
+  },
+  {
+    title: "Core Computer Science",
+    icon: "terminal",
+    skills: ["Data Structures & Algorithms", "OOP", "DBMS", "OS", "CN", "Software Engineering"]
+  },
+  {
+    title: "Backend Development",
+    icon: "server",
+    skills: ["Node.js", "Express.js", "FastAPI", "Flask", "REST APIs", "JWT", "RAG", "Spring Boot (Learning)"]
   },
   {
     title: "Frontend Development",
     icon: "layout",
-    skills: ["React.js", "Redux Toolkit", "Tailwind CSS", "Bootstrap", "Responsive Web Design"]
+    skills: ["React.js", "HTML5", "CSS3", "Tailwind CSS", "Next.js"]
   },
   {
-    title: "Backend & APIs",
-    icon: "server",
-    skills: ["Node.js", "Express.js", "Flask", "FastAPI", "RESTful APIs", "JWT", "OAuth 2.0"]
-  },
-  {
-    title: "Databases & Storage",
+    title: "Databases",
     icon: "database",
-    skills: ["MySQL", "MongoDB", "SQLite", "Supabase", "Mongoose", "Prisma ORM"]
+    skills: ["MongoDB", "MongoDB Atlas", "MySQL", "Supabase"]
   },
   {
-    title: "AI, ML & GenAI",
+    title: "AI/ML & Generative AI",
     icon: "cpu",
-    skills: ["Pandas", "NumPy", "Scikit-Learn", "OpenAI API", "Google Gemini API", "LangChain"]
+    skills: ["Gemini API", "RAG", "Embeddings", "AI Agents", "Scikit-learn", "NumPy", "Pandas"]
   },
   {
-    title: "DevOps, Cloud & Tools",
-    icon: "tool",
-    skills: ["Git", "GitHub", "Docker", "Vercel", "Render", "Postman", "VS Code", "Figma"]
+    title: "Cloud & DevOps",
+    icon: "cloud",
+    skills: ["AWS EC2", "S3", "IAM", "Docker", "GitHub Actions", "Vercel", "Render"]
   }
 ];
 
@@ -261,7 +266,7 @@ export const chatKnowledge = {
     "Satya's key projects include:\n• CodeForCareer — Full-Stack Placement & Coding Platform\n• Product Intelligence Platform — AI-Powered Product Analytics\n• LearnWise AI — GenAI Adaptive Learning & Career Mentor\n• NetSage AI — Smart Network Diagnostics & Assistant\n• Bireena Medico — Hospital Management System\n• Sampada Herbs & Spices — E-Commerce Storefront\n• Smart Solar Solutions — Clean Energy Analytics Portal\n• Offline AI Assistant — Local Intelligence Assistant"
   ],
   skills: [
-    "Satya's tech stack:\n• Languages: C, C++, Java, Python, JavaScript, SQL\n• Frontend: React.js, Redux, Tailwind CSS, HTML5, CSS3\n• Backend: Node.js, Express, Flask, FastAPI, REST APIs, JWT, OAuth\n• Databases: MySQL, MongoDB, PostgreSQL, Supabase\n• AI/ML: Pandas, NumPy, Scikit-learn, OpenAI API, Gemini API\n• Tools: Git, Docker, Vercel, Postman, VS Code"
+    "Satya's technical skills:\n• Programming Languages: C++, C, Java, Python, JavaScript, TypeScript, SQL\n• Core CS: Data Structures & Algorithms, OOP, DBMS, OS, CN, Software Engineering\n• Backend Development: Node.js, Express.js, FastAPI, Flask, REST APIs, JWT, RAG, Spring Boot (Learning)\n• Frontend Development: React.js, HTML5, CSS3, Tailwind CSS, Next.js\n• Databases: MongoDB, MongoDB Atlas, MySQL, Supabase\n• AI/ML & Generative AI: Gemini API, RAG, Embeddings, AI Agents, Scikit-learn, NumPy, Pandas\n• Cloud & DevOps: AWS EC2, S3, IAM, Docker, GitHub Actions, Vercel, Render"
   ],
   contact: [
     "You can reach Satya directly via:\n• Email: satyaprem619@gmail.com\n• LinkedIn: linkedin.com/in/satya-prem-3852033a9/\n• GitHub: github.com/SATYA-PREM\n• Location: Jabalpur, MP, India"
