@@ -1504,7 +1504,6 @@ section {
     display: flex;
     gap: 0.6rem;
     flex-wrap: wrap;
-    margin-top: auto;
 }
 
 .proj-link {
@@ -1535,6 +1534,40 @@ section {
 .proj-link.live:hover {
     opacity: 0.9;
     transform: translateY(-1px);
+}
+
+.card-actions-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin-top: auto;
+    padding-top: 0.4rem;
+}
+
+.expand-toggle-btn {
+    background: rgba(94, 234, 212, 0.05);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.35rem 0.75rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
+    color: var(--accent);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    transition: all 0.2s ease;
+    outline: none;
+    font-weight: 600;
+}
+
+.expand-toggle-btn:hover {
+    background: var(--theme-toggle-hover);
+    border-color: var(--accent);
+    color: var(--text);
+    box-shadow: 0 0 10px rgba(94, 234, 212, 0.15);
 }
 
 .proj-link.github-btn {
