@@ -23,7 +23,7 @@ export const navLinks = [
 
 export const heroStats = [
   { value: "10+", label: "Projects Built" },
-  { value: "4", label: "Internships" },
+  { value: "5", label: "Internships" },
   { value: "GATE '26", label: "Qualified CSE" },
   { value: "100+", label: "DSA Solved" }
 ];
@@ -97,9 +97,21 @@ export const skillsCategories = [
 
 export const experienceData = [
   {
+    role: "Technical Lead Internship",
+    company: "Urmila Shree Sports Club Foundation",
+    period: "Oct 2026 – Present",
+    type: "Internship",
+    description: "Technical Lead at Urmila Shree, responsible for website development, managing technical operations, and supporting digital initiatives.",
+    highlights: [
+      "Leading end-to-end website architecture, modern frontend and backend integration, and digital workflow management.",
+      "Directing technical operations, deployment management, and digital engagement strategies for community initiatives."
+    ],
+    tech: ["Full-Stack", "Web Development", "React.js", "REST APIs", "Technical Operations"]
+  },
+  {
     role: "AI/ML Virtual Intern",
     company: "Infosys Springboard",
-    period: "Aug 2026 – Present",
+    period: "Aug 2026 – Oct 2026",
     type: "Virtual Internship",
     description: "Working on an AI-driven Product Intelligence platform focused on customer feedback analysis, product planning, feature prioritization, and requirements generation.",
     highlights: [
@@ -290,23 +302,35 @@ export const achievementsData = [
 
 export const chatKnowledge = {
   greet: [
-    "Hi! I'm SP-Bot, Satya's portfolio assistant. Great to meet you!",
-    "Hello! How can I help you learn about Satya's work and technical background?"
+    "Hi! I'm SP-Bot, Satya's portfolio assistant. Great to meet you! How can I help you today?",
+    "Hello! Looking to learn about Satya's backend engineering, AI projects, or experience? Ask away!"
   ],
   who: [
-    "Satya Prem is a 4th-year B.Tech CSE student at SRIT Jabalpur. He's a Software Developer focused on full-stack development, backend systems, REST APIs, databases, and AI. He has 10+ projects, 4 internships, and qualified GATE 2026 CSE."
+    "Satya Prem is a 4th-year B.Tech CSE student at Shri Ram Institute of Technology, Jabalpur.\n\nHe is a Backend / Software Engineer with AI Engineering capability, specializing in Java, Spring Boot, REST APIs, PostgreSQL, Redis, and Python/FastAPI with Gemini API & RAG.\n\nHighlights:\n• 10+ Projects Built\n• 5 Internships (including Technical Lead at Urmila Shree & AI/ML at Infosys Springboard)\n• Qualified GATE 2026 (CSE)\n• 100+ DSA Problems Solved"
   ],
   projects: [
-    "Satya's key projects include:\n• CodeForCareer — Full-Stack Placement & Coding Platform\n• Product Intelligence Platform — AI-Powered Product Analytics\n• LearnWise AI — GenAI Adaptive Learning & Career Mentor\n• NetSage AI — Smart Network Diagnostics & Assistant\n• Bireena Medico — Hospital Management System\n• Sampada Herbs & Spices — E-Commerce Storefront\n• Smart Solar Solutions — Clean Energy Analytics Portal\n• Offline AI Assistant — Local Intelligence Assistant"
+    "Satya has built 10+ impactful software and AI solutions:\n\n1. CodeForCareer — Full-Stack Placement & Coding Platform (React, Node.js, Express, MongoDB)\n2. Product Intelligence Platform — AI Product Analytics (Infosys Springboard, Gemini API, RAG, FastAPI)\n3. LearnWise AI — GenAI Adaptive Learning & Career Mentor\n4. NetSage AI — Smart Network Diagnostics & Assistant\n5. Bireena Medico — Hospital & Clinic Management System\n6. Sampada Herbs & Spices — Modern E-Commerce Storefront\n7. Smart Solar Solutions — Clean Energy Analytics Portal\n8. Offline AI Assistant — Local Intelligence Assistant\n\nAsk about any project for details!"
   ],
   skills: [
-    "Satya's technical skills:\n• Programming Languages: C++, C, Java, Python, JavaScript, TypeScript, SQL\n• Core CS: Data Structures & Algorithms, OOP, DBMS, Operating Systems (OS), Computer Networks (CN), Software Engineering\n• Backend Development: Node.js, Express.js, FastAPI, Flask, REST APIs, JWT, RAG, Spring Boot (Learning)\n• Frontend Development: React.js, HTML5, CSS3, Tailwind CSS, Next.js\n• Databases: MongoDB, MongoDB Atlas, MySQL, Supabase\n• AI/ML & Generative AI: Gemini API, RAG, Embeddings, AI Agents, Scikit-learn, NumPy, Pandas\n• Cloud & DevOps: AWS EC2, S3, IAM, Docker, GitHub Actions, Vercel, Render"
+    "Satya's Core Tech Stack:\n\n• Backend & Systems: Java, Spring Boot, REST APIs, PostgreSQL, JPA/Hibernate, Spring Security, Redis, Node.js, Express, FastAPI\n• AI & Machine Learning: Python, Gemini API, Embeddings, RAG, AI Agents, Scikit-learn, Pandas, NumPy\n• Frontend: React.js, Next.js, HTML5, CSS3, Tailwind CSS, JavaScript, TypeScript\n• Core Computer Science: DSA (100+ solved), OOP, DBMS, OS, Computer Networks, System Design\n• Cloud & Tools: Docker, AWS (EC2, S3, IAM), Git, GitHub Actions, Vercel, Supabase"
+  ],
+  experience: [
+    "Satya has completed 5 internships across software engineering and AI:\n\n1. Technical Lead Intern — Urmila Shree Sports Club Foundation (Oct 2026 – Present)\n   Leading website architecture, modern frontend/backend integration, and digital initiatives.\n2. AI/ML Virtual Intern — Infosys Springboard (Aug 2026 – Oct 2026)\n   Built AI-driven product intelligence, feature prioritization & RAG systems.\n3. Web Development Intern — Unified Mentor (May 2026 – Jun 2026)\n   Developed responsive full-stack applications with modular architecture.\n4. Full Stack Web Development Intern — Brainovision (Apr 2026 – May 2026)\n   Engineered scalable web solutions and REST APIs.\n5. Web Development & Designing Intern — Oasis Infobyte (Mar 2026 – Apr 2026)\n   Created interactive UI interfaces and client-side applications."
+  ],
+  gate: [
+    "Yes! Satya officially qualified the GATE 2026 Examination in Computer Science & Information Technology (CS/IT), validating rigorous foundations in Algorithms, Data Structures, Operating Systems, DBMS, Theory of Computation, and Computer Networks."
+  ],
+  education: [
+    "Education:\n• B.Tech in Computer Science & Engineering (2023 – 2027)\n  Shri Ram Institute of Technology (SRIT), Jabalpur, MP, India\n• Key Coursework: Data Structures & Algorithms, Database Management Systems, Operating Systems, Computer Networks, Software Engineering, Object-Oriented Programming"
+  ],
+  resume: [
+    "You can view or download Satya's resume directly using the 'Resume' button in the navigation bar or from /resume.pdf."
   ],
   contact: [
-    "You can reach Satya directly via:\n• Email: satyaprem619@gmail.com\n• LinkedIn: linkedin.com/in/satya-prem-3852033a9/\n• GitHub: github.com/SATYA-PREM\n• Location: Jabalpur, MP, India"
+    "You can connect with Satya directly:\n• Email: satyaprem619@gmail.com\n• LinkedIn: linkedin.com/in/satya-prem-3852033a9/\n• GitHub: github.com/SATYA-PREM\n• Location: Jabalpur, MP, India\n\nFeel free to reach out for software engineering roles or collaborations!"
   ],
   default: [
-    "Satya Prem is a Software Engineer specializing in backend systems, React, Node.js, Python, and AI applications. Feel free to ask about his projects, skills, experience, or GATE qualification!"
+    "I can help you with information about Satya's:\n• Background & Bio ('Who is Satya?')\n• Key Projects ('Projects')\n• Technical Skills ('Skills')\n• Work Experience & Internships ('Experience')\n• GATE 2026 Qualification ('GATE')\n• Contact details ('Contact')\n\nWhat would you like to explore?"
   ]
 };
 

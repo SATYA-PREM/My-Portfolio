@@ -7,11 +7,15 @@
     --surface: #111a20;
     --border: rgba(94, 234, 212, 0.14);
     --border-hover: rgba(94, 234, 212, 0.4);
+    --border: rgba(94, 234, 212, 0.16);
+    --border-hover: rgba(94, 234, 212, 0.45);
     --accent: #5eead4;
     --accent2: #f6c177;
     --accent3: #ff847c;
     --text: #e8f0f7;
     --muted: #779796;
+    --text: #f1f5f9;
+    --muted: #94a3b8;
     --card: #0d1c1d;
     --github-color: #7ee787;
     --radius: 16px;
@@ -24,8 +28,12 @@
     --chip-bg: rgba(255, 255, 255, 0.025);
     --chip-hover-bg: rgba(94, 234, 212, 0.05);
     --profile-item-bg: rgba(255, 255, 255, 0.02);
+    --chip-bg: rgba(255, 255, 255, 0.035);
+    --chip-hover-bg: rgba(94, 234, 212, 0.08);
+    --profile-item-bg: rgba(255, 255, 255, 0.025);
     --chat-bubble-bot-bg: rgba(94, 234, 212, 0.08);
     --chat-bubble-bot-border: rgba(94, 234, 212, 0.1);
+    --chat-bubble-bot-border: rgba(94, 234, 212, 0.15);
 }
 
 /* ============================================================
@@ -37,16 +45,21 @@
     --surface: #ffffff;
     --border: rgba(15, 118, 110, 0.18);
     --border-hover: rgba(15, 118, 110, 0.45);
+    --border: rgba(15, 118, 110, 0.22);
+    --border-hover: rgba(15, 118, 110, 0.55);
     --accent: #0f766e;
     --accent2: #b45309;
     --accent3: #e11d48;
     --text: #0f172a;
     --muted: #475569;
+    --text: #020617;
+    --muted: #334155;
     --card: #ffffff;
     --github-color: #15803d;
     --radius: 16px;
     --shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
     --nav-bg: rgba(248, 250, 252, 0.88);
+    --nav-bg: rgba(248, 250, 252, 0.92);
     --nav-bg-scrolled: rgba(248, 250, 252, 0.98);
     --mobile-nav-bg: linear-gradient(160deg, #f8fafc 0%, #f1f5f9 50%, #ffffff 100%);
     --theme-toggle-bg: rgba(15, 118, 110, 0.08);
@@ -54,8 +67,12 @@
     --chip-bg: rgba(15, 23, 42, 0.04);
     --chip-hover-bg: rgba(15, 118, 110, 0.08);
     --profile-item-bg: rgba(15, 23, 42, 0.03);
+    --chip-bg: rgba(15, 23, 42, 0.05);
+    --chip-hover-bg: rgba(15, 118, 110, 0.1);
+    --profile-item-bg: rgba(15, 23, 42, 0.04);
     --chat-bubble-bot-bg: rgba(15, 118, 110, 0.08);
     --chat-bubble-bot-border: rgba(15, 118, 110, 0.2);
+    --chat-bubble-bot-border: rgba(15, 118, 110, 0.25);
 }
 
 /* Smooth theme transition */
@@ -123,10 +140,12 @@ body::before {
     pointer-events: none;
     z-index: 999;
     opacity: 0.3;
+    opacity: 0.15;
 }
 
 [data-theme="light"] body::before {
     opacity: 0.12;
+    opacity: 0.04;
 }
 
 /* Grid bg */

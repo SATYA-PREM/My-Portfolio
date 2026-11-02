@@ -48,11 +48,15 @@
 .skill-pill {
     font-family: 'Space Mono', monospace;
     font-size: 0.68rem;
+    font-size: 0.72rem;
     background: var(--theme-toggle-bg);
     border: 1px solid var(--border);
     color: var(--text);
     padding: 0.25rem 0.65rem;
     border-radius: 4px;
+    padding: 0.3rem 0.7rem;
+    border-radius: 6px;
+    font-weight: 500;
     transition: all 0.2s;
 }
 
